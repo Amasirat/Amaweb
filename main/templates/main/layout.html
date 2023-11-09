@@ -3,10 +3,22 @@
 <html lang="en">
 <head>
     <title>Amaweb</title>
-    <link href="{% static 'main/layout.css' %}" rel="stylesheet">
+    <link href="{% static 'main/css/layout.css' %}" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
 </head>
 
 <body class="main_body">
+    <div class="main_bar">
+        <span class="bar_sp1"><a href="" class="bar_a1">Home</a></span>
+        <span class="bar_sp1"><a href="" class="bar_a1">My Music</a></span>
+        <span class="bar_sp1"><a href="" class="bar_a1">Blog</a></span>
+        <span class="bar_sp1"><a href="" class="bar_a1">Socials</a></span>
+        <span class="bar_sp1"><a href="" class="bar_a1">About</a></span>
+    </div>
     {% block body %}
     {% endblock %}
 </body>

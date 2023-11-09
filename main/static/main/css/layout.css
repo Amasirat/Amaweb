@@ -1,0 +1,23 @@
+.main_body {
+    background-image: linear-gradient(to right, rgb(37, 159, 180), rgb(6, 161, 102));
+}
+
+.main_bar {
+    background-color: rgb(9, 82, 165);
+    width: 100%;
+    height: 2vw;
+    border-color: black;
+}
+
+.bar_sp1 {
+    border-color: black;
+    font-size: large;
+    text-align: center;
+    padding: 2vw;
+    margin: 15px;
+}
+
+.bar_a1 {
+    text-decoration: none;
+    color: black;
+}
