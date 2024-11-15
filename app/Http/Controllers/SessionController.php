@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class SessionController extends Controller
 {
@@ -11,7 +12,7 @@ class SessionController extends Controller
         return view("user.login");
     }
 
-    public function store()
+    public function store(Request $request)
     {
 
     }
@@ -23,6 +24,7 @@ class SessionController extends Controller
 
     public function destroy()
     {
-
+        Auth::logout();
+        return redirect('/');
     }
 }
