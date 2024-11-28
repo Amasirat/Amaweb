@@ -18,6 +18,15 @@
             @if (count($blog->comments) == 0)
                 <div class="m-14 text-white/50">No Comments! Be the first to comment on this brilliant article!</div>
             @endif
+
+            <div>
+                <x-form.form>
+                    <textarea class="text-white rounded-xl w-96 h-52 bg-white/25 p-5">
+                    </textarea>
+                    <x-form.submit value="Comment" />
+                </x-form.form>
+            </div>
+
             @foreach($blog->comments as $comment)
                 <x-blog.comment :comment="$comment" />
             @endforeach
