@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -22,9 +24,11 @@ class BlogController extends Controller
         ]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
-
+        return view("blog.create", [
+            "user" => $request->user()
+        ]);
     }
 
     public function store()

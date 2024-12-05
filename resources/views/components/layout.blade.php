@@ -29,19 +29,6 @@
                 </div>
             </nav>
         </div>
-
-        <!-- <div class="w-1/2 flex flex-row justify-end p-5 space-x-2">
-            @guest
-            <nav>
-
-            </nav>
-            @endguest
-
-            @auth
-
-            @endauth
-        </div> -->
-
     </div>
 
     {{ $slot }}

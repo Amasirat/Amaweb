@@ -14,9 +14,11 @@ class UserController extends Controller
         return view("user.register");
     }
 
-    public function show()
+    public function show(User $user)
     {
-
+        return view("user.panel", [
+            "user" => $user
+        ]);
     }
 
     public function create(User $user)

@@ -21,9 +21,8 @@ class SessionController extends Controller
         ]);
 
         // TODO: Authenticate if username and password is correct
-        if(Auth::attempt($attributes))
+        if(! Auth::attempt($attributes))
         {
-            dd("sas");
             throw new ValidationException("Failed to login...Were your details correct?");
         }
 
