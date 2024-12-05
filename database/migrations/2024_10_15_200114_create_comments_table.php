@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Comment;
 use App\Models\User;
 use App\Models\Blog;
 
@@ -18,6 +19,9 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->nullable();
             $table->foreignIdFor(Blog::class);
             $table->text("body");
+            $table->foreignIdFor(Comment::class)->nullable();
+            $table->string("guest_name")->nullable();
+            $table->string("email")->nullable();
             $table->timestamps();
         });
     }

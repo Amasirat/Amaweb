@@ -9,16 +9,29 @@ use App\Models\User;
 
 class CommentController extends Controller
 {
-    public function store(Request $request, User $user, Blog $blog)
+    public function store(Request $request, Blog $blog)
     {
         // Validate
-        dd($request->merge(["user_id" => $user->id, "blog_id" => $blog->id]));
-
-        if($request["user_id"] == null)
+        $attribute = null;
+        if($request["guest_name"] != null && $request["email"] != null)
         {
-
+            $attribute = $request->validate([
+                "guest_name" => ["required"],
+                "email" => ["required"],
+                "body" => ["required"],
+            ]);
+            $attribute = array_merge($attribute, ["blog_id" => $blog->id]);
+        }
+        else
+        {
+            $attribute = $request->validate([
+                "body" => ["required"],
+            ]);
+            $attribute= array_merge($attribute, ["blog_id" => $blog->id, "user_id" => $request->user()->id]);
         }
         // Store in table
+        Comment::create($attribute);
+        return redirect("/blogs/$blog->id");
     }
     public function edit()
     {

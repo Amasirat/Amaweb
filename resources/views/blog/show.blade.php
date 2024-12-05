@@ -21,6 +21,10 @@
 
             <div>
                 <x-form.form>
+                    @guest
+                        <x-form.input-field label="guest_name"/>
+                        <x-form.input-field label="email" />
+                    @endguest
                     <textarea name="body" class="text-white rounded-xl w-96 h-52 bg-white/25 p-5">
                     </textarea>
                     <x-form.submit value="Comment" />
