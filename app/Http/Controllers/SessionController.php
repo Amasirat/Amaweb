@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Dotenv\Exception\ValidationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,13 +15,17 @@ class SessionController extends Controller
 
     public function store(Request $request)
     {
-        // TODO More validation options
         $attributes = $request->validate([
-            "username" => ["required"],
+            "username" => ["required", "exists:users,username"],
             "password" => ["required"]
         ]);
 
-        Auth::attempt($attributes);
+        // TODO: Authenticate if username and password is correct
+        if(Auth::attempt($attributes))
+        {
+            dd("sas");
+            throw new ValidationException("Failed to login...Were your details correct?");
+        }
 
         request()->session()->regenerate();
 
@@ -29,7 +34,7 @@ class SessionController extends Controller
 
     public function edit()
     {
-
+        // TODO
     }
 
     public function destroy()

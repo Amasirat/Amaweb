@@ -25,10 +25,11 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
+        // TODO more validation options
         $attributes = $request->validate([
-            "username" => ["required"],
-            "email" => ["required", "email"],
-            "password" => ["confirmed", "required"]
+            "username" => ["required", "unique:users,username"],
+            "email" => ["required", "email", "unique:users,email"],
+            "password" => ["confirmed", "required", "min:6"]
         ]);
 
         $user = User::create($attributes);
@@ -40,10 +41,10 @@ class RegisterController extends Controller
 
     public function edit(User $user)
     {
-
+        // TODO
     }
     public function destroy(User $user)
     {
-
+        // TODO
     }
 }
