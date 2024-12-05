@@ -31,9 +31,23 @@ class BlogController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(Request $request)
     {
+        $user = $request->user();
+        // validate
+        $attributes = $request->validate([
+            "title" => ["required"],
+            "body" => ["required"],
+        ]);
 
+        $image = null;
+
+        Blog::create([
+            "title" => $attributes["title"],
+            "body" => $attributes["body"],
+            "user_id" => $user->id,
+            "image" => $image
+        ]);
     }
 
     public function edit()
