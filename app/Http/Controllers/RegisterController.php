@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\Password;
 use App\Models\User;
 
 class RegisterController extends Controller
@@ -29,7 +30,7 @@ class RegisterController extends Controller
         $attributes = $request->validate([
             "username" => ["required", "unique:users,username"],
             "email" => ["required", "email", "unique:users,email"],
-            "password" => ["confirmed", "required", "min:6"]
+            "password" => ["confirmed", "required", Password::min(6)->letters()->numbers()]
         ]);
 
         $user = User::create($attributes);
