@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Password;
 use App\Models\User;
 
-class RegisterController extends Controller
+class UserController extends Controller
 {
     public function index()
     {
