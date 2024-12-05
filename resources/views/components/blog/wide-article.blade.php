@@ -4,7 +4,8 @@
     <div class="bg-white/15 rounded-xl w-11/12 h-auto p-4 m-5 flex flex-row hover:bg-white/45 duration-500 cursor-pointer">
 
         <div class="w-1/3">
-            <img class="w-full h-full max-md:w-52 max-md:h-52" src="{{ Vite::asset('resources/images/placeholders/achildsDreamcover.png') }}">
+            <img class="w-full h-full max-md:w-52 max-md:h-52"
+                src="{{ Vite::asset('resources/images/placeholders/achildsDreamcover.png') }}">
         </div>
 
         <div class="w-2/3 flex flex-col space-y-5 p-6">

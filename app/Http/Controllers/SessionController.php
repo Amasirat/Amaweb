@@ -14,21 +14,17 @@ class SessionController extends Controller
 
     public function store(Request $request)
     {
+        // TODO More validation options
         $attributes = $request->validate([
             "username" => ["required"],
             "password" => ["required"]
         ]);
 
-        if(Auth::attempt($attributes))
-        {
-            dd("passed");
-        }
-        else
-        {
-            dd("failed");
-        }
+        Auth::attempt($attributes);
 
-        redirect('/blogs');
+        request()->session()->regenerate();
+
+        return redirect('/blogs');
     }
 
     public function edit()
@@ -38,7 +34,7 @@ class SessionController extends Controller
 
     public function destroy()
     {
-        Auth::logout();
+        // todo
         return redirect('/');
     }
 }

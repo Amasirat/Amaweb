@@ -1,5 +1,6 @@
 <x-layout>
-    <x-form.form action="/register">
+    <!-- The margin is to align the footer at the bottom of the screen correctly -->
+    <x-form.form action="/register" class="mb-20">
         <div class="flex flex-col flex-wrap space-y-4">
             <x-form.input-field label="username" />
             <x-form.input-field type="email" label="email" />
