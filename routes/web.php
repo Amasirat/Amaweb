@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Blog;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
@@ -8,8 +9,15 @@ use App\Http\Controllers\CommentController;
 
 // Generic Views
 Route::get('/', function () {
+
+    $featured_blogs = Blog::latest()
+        ->orderByDesc("id")
+        ->take(Blog::$featured_count)
+        ->get();
+
     return view("index", [
-        "user" => Auth::user()
+        "user" => Auth::user(),
+        "featured_blogs" => $featured_blogs
     ]);
 })->name("homepage");
 Route::view('/about',"about")->name("about-page");

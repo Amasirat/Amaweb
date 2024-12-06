@@ -30,20 +30,6 @@
         </div>
     </section>
 
-    <section class="border-b-2 h-52 w-full mt-5">
-        <div class="flex flex-row justify-center w-full">
-            <div class="inline-block px-4">
-                <img class="w-72 h-52 p-4" src="{{ Vite::asset('resources/images/placeholders/city.jpg') }}">
-            </div>
-            <div class="inline-block px-4">
-                <img class="w-72 h-52 p-4" src="{{ Vite::asset('resources/images/placeholders/city.jpg') }}">
-            </div>
-            <div class="inline-block px-4">
-                <img class="w-72 h-52 p-4" src="{{ Vite::asset('resources/images/placeholders/city.jpg') }}">
-            </div>
-        </div>
-    </section>
-
     <div class="m-5">
         <h1 class="italic font-bold text-2xl p-10 text-center max-sm:text-xl">
             "A jack of all trades is a master of none, but often times better than a master of one"
@@ -55,40 +41,25 @@
         <x-title>Featured</x-title>
 
         <div class="border-t-2">
-                    <!-- Left Scroll Button -->
-        <button id="scroll-left" class="z-10 bg-white/12 p-2 rounded-full shadow">
-            &larr;
-        </button>
+            <div class="flex flex-row justify-between w-full">
+                <!-- Left Scroll Button -->
+                <button id="scroll-left" class="z-10 bg-white/12 p-2 rounded-md shadow">
+                    &larr;
+                </button>
 
-        <div id="scrollable-div" class="overflow-x-auto whitespace-nowrap h-64">
-            <div class="inline-block px-4 h-64 w-80">
-                <img class="w-72 h-52 p-4" src="{{ Vite::asset('resources/images/placeholders/city.jpg') }}">
-            </div>
-            <div class="inline-block px-4 h-64 w-80">
-                <img class="w-72 h-52 p-4" src="{{ Vite::asset('resources/images/placeholders/city.jpg') }}">
-            </div>
-            <div class="inline-block px-4 h-64 w-80">
-                <img class="w-72 h-52 p-4" src="{{ Vite::asset('resources/images/placeholders/city.jpg') }}">
-            </div>
-            <div class="inline-block px-4 h-64 w-80">
-                <img class="w-72 h-52 p-4" src="{{ Vite::asset('resources/images/placeholders/city.jpg') }}">
-            </div>
-            <div class="inline-block px-4 h-64 w-80">
-                <img class="w-72 h-52 p-4" src="{{ Vite::asset('resources/images/placeholders/city.jpg') }}">
-            </div>
-            <div class="inline-block px-4 h-64 w-80">
-                <img class="w-72 h-52 p-4" src="{{ Vite::asset('resources/images/placeholders/city.jpg') }}">
-            </div>
-            <div class="inline-block px-4 h-64 w-80">
-                <img class="w-72 h-52 p-4" src="{{ Vite::asset('resources/images/placeholders/city.jpg') }}">
+                <!-- Right Scroll Button -->
+                <button id="scroll-right" class="z-10 bg-white/12 p-2 rounded-md shadow">
+                    &rarr;
+                </button>
             </div>
 
-        </div>
+            <div id="scrollable-div" class=" bg-white/5 p-4 flex flex-row overflow-x-auto whitespace-nowrap h-64 space-x-7">
+                @foreach ($featured_blogs as $blog)
+                <x-blog.article :blog="$blog" />
+                @endforeach
+            </div>
 
-        <!-- Right Scroll Button -->
-        <button id="scroll-right" class="z-10 bg-white/12 p-2 rounded-full shadow">
-            &rarr;
-        </button>
+
         </div>
     </section>
 

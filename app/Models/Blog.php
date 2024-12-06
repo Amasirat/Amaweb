@@ -12,6 +12,8 @@ class Blog extends Model
 
     protected $guarded = [];
 
+    static public $featured_count = 10;
+
     public function comments()
     {
         return $this->hasMany(Comment::class);

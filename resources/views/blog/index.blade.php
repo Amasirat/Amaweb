@@ -16,6 +16,11 @@
             @foreach($blogs as $blog)
                 <x-blog.wide-article :blog="$blog" class="w-3/4" />
             @endforeach
+
+            <div>
+                {{ $blogs->links('pagination::tailwind') }}
+            </div>
         </div>
+
     </div>
 </x-layout>
