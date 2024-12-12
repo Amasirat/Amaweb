@@ -38,7 +38,8 @@ class SessionController extends Controller
 
     public function destroy()
     {
-        // todo
+        Auth::logout();
+
         return redirect('/');
     }
 }

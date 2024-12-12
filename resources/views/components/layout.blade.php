@@ -14,8 +14,6 @@
                 <div class="space-x-6 mx-4 flex flex-row max-sm:flex-col max-sm:space-y-5 max-sm:space-x-0">
                     <x-link class="hover:border-b-2 duration-75" href="/" :active="request()->is('/')">Home</x-link>
                     <x-link class="hover:border-b-2 duration-75" href="/blogs" :active="request()->is('blogs')">Blogs</x-link>
-                    <x-link class="hover:border-b-2 duration-75" href="/blogs" :active="request()->is('music')">Music</x-link>
-                    <x-link class="hover:border-b-2 duration-75" href="/resume" :active="request()->is('resume')">Resume</x-link>
                     <x-link class="hover:border-b-2 duration-75" href="/about" :active="request()->is('about')">About</x-link>
                 </div>
                 <div class="space-x-3 mx-4 max-sm:py-3 max-sm:space-x-0">

@@ -34,5 +34,6 @@ Route::get('/register', [UserController::class, 'index'])->name("user-register")
 Route::get('/login', [SessionController::class, "index"])->name("user-login");
 Route::get('/panel', [UserController::class, 'show'])->name("user-panel");
 
+Route::delete('/logout', [SessionController::class, 'destroy'])->name("delete-user");
 Route::post('/register', [UserController::class, 'store'])->name("post-user");
 Route::post('/login', [SessionController::class, 'store'])->name("post-session");

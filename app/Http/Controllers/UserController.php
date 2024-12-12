@@ -14,10 +14,10 @@ class UserController extends Controller
         return view("user.register");
     }
 
-    public function show(User $user)
+    public function show()
     {
         return view("user.panel", [
-            "user" => $user
+            "user" => Auth::user()
         ]);
     }
 
