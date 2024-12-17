@@ -7,17 +7,9 @@ use Parsedown;
 class MarkDownService
 {
 
-    protected $parsedown;
-    /**
-     * Create a new class instance.
-     */
-    public function __construct(Parsedown $parsedown)
+    public static function Parse($content)
     {
-        $this->parsedown = $parsedown;
-    }
-
-    public function Parse($content)
-    {
-        return $this->parsedown->text($content);
+        $parsedown = new Parsedown();
+        return $parsedown->text($content);
     }
 }

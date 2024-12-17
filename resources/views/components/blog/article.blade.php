@@ -1,12 +1,18 @@
 @props(["blog"])
 
+@php
+    if(! is_null($blog->image))
+        $blogImage = Vite::asset($blog->image);
+    else
+        $blogImage = "https://placehold.co/500x400";
+@endphp
 <a href="/blogs/{{ $blog->id }}">
-    <div class="bg-white/15 hover:bg-white/25 duration-300 max-w-72 h-56 rounded-xl p-2 shadow-2xl overflow-hidden">
+    <div class="bg-white/5 hover:bg-white/25 duration-300 w-96 h-96 rounded-xl p-2 shadow-2xl overflow-hidden">
         <div class="flex flex-row justify-center">
-            <img class="shadow-2xl rounded-md w-40" src="{{ Vite::asset('resources/images/placeholders/achildsDreamcover.png') }}" alt="blog-image">
+            <img class="shadow-2xl rounded-md w-96 h-72" src="{{ $blogImage }}" alt="blog-image">
         </div>
 
-        <div>
+        <div class="p-5">
             <span class="font-bold">{{ $blog->title }}</span>
         </div>
     </div>

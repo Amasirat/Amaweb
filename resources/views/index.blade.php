@@ -1,7 +1,7 @@
 <x-layout>
     <section class="flex flex-row max-md:flex-col">
         <div class="w-1/2 max-md:min-w-full content-center">
-            <img class="hover:border-8 hover:p-0 duration-300 cursor-pointer w-70 h-70 p-6" alt="main-image" src="{{ Vite::asset('resources/images/placeholders/city.jpg') }}">
+            <a href="/about"><img class="hover:border-8 hover:p-0 duration-300 cursor-pointer w-70 h-70 p-6" alt="main-image" src="{{ Vite::asset('resources/images/placeholders/city.jpg') }}"></a>
         </div>
         <div class="w-1/2 max-md:min-w-full">
             <div class="bg-white/10 px-5 py-3 m-4 rounded-xl">
@@ -53,13 +53,17 @@
                 </button>
             </div>
 
-            <div id="scrollable-div" class=" bg-white/5 p-4 flex flex-row overflow-x-auto whitespace-nowrap h-64 space-x-7">
+            <div id="scrollable-div" class=" bg-white/5 p-4 flex flex-row overflow-x-auto whitespace-nowrap h-auto space-x-7">
                 @foreach ($featured_blogs as $blog)
                 <x-blog.article :blog="$blog" />
                 @endforeach
+
+                @if($featured_blogs->count() == 0)
+                    <div class="h-auto p-24">
+                        <span class="p-28 text-white/30">No Featured blogs yet...I've got a massive case of writer's block guys!</span>
+                    </div>
+                @endif
             </div>
-
-
         </div>
     </section>
 

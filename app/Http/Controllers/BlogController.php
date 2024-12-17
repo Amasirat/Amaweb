@@ -21,8 +21,7 @@ class BlogController extends Controller
 
     public function show(Blog $blog)
     {
-        $mdService = new MarkDownService(new Parsedown());
-        $blog->body = $mdService->parse($blog->body);
+        $blog->body = MarkDownService::parse($blog->body);
         return view("blog.show", [
             "blog" => $blog
         ]);

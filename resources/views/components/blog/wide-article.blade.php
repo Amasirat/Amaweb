@@ -10,10 +10,6 @@
 
         <div class="w-1/2 flex flex-col space-y-5 p-6">
             <div class="font-bold text-2xl">{{ $blog->title }}</div>
-            <div class="text-gray-400">
-                Voluptate adipisicing nisi officia non proident pariatur.
-                Sint non in excepteur amet officia mollit quis cupidatat.
-            </div>
         </div>
     </div>
 </a>

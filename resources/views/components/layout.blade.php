@@ -33,7 +33,7 @@
 
     {{ $slot }}
 
-    <footer class="bg-white/5 h-52 w-full mt-8">
+    <footer class="bg-white/5 h-52 w-full mt-24">
         <div class="w-auto h-max flex flex-row">
             <div class="w-1/2 text-left mt-14 mx-5 font-bold text-xl">
                 Follow me on my socials, if you would so please!
