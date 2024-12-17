@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use Parsedown;
+use App\MarkDownService;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -19,6 +21,8 @@ class BlogController extends Controller
 
     public function show(Blog $blog)
     {
+        $mdService = new MarkDownService(new Parsedown());
+        $blog->body = $mdService->parse($blog->body);
         return view("blog.show", [
             "blog" => $blog
         ]);
@@ -33,7 +37,7 @@ class BlogController extends Controller
 
     public function store(Request $request)
     {
-        $user = $request->user();
+        $user = Auth::user();
         // validate
         $attributes = $request->validate([
             "title" => ["required"],
@@ -48,6 +52,8 @@ class BlogController extends Controller
             "user_id" => $user->id,
             "image" => $image
         ]);
+
+        return redirect("/blogs");
     }
 
     public function edit()

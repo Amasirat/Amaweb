@@ -19,7 +19,8 @@ class BlogFactory extends Factory
     {
         return [
             "title" => fake()->text(),
-            "body" => fake()->paragraph()
+            "body" => fake()->paragraph(),
+            "user_id" => User::factory()->create(),
         ];
     }
 }

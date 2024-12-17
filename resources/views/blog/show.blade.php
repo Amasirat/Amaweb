@@ -11,7 +11,9 @@
         </div>
 
         <div class="border-t-2 mt-5 p-10 text-md">
-            {{ $blog->body }}
+
+            {!! $blog->body !!}
+
         </div>
 
         <div class="border-t-2 border-dashed mt-10">

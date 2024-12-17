@@ -15,7 +15,17 @@
                 <x-form.submit value="Logout"/>
             </form>
         </div>
+
     </div>
+
+        <div class="bg-white/5 flex flex-col w-1/6 rounded-lg p-4 min-h-96 hover:bg-white/10 duration-300">
+            @can("create-blog")
+            <x-link href="/create" class="text-sm font-bold m-2">Create Blogs</x-link>
+            @endcan
+            <x-link href="" class="text-sm font-bold m-2">Favorites</x-link>
+            <x-link href="" class="text-sm font-bold m-2">Comments</x-link>
+        </div>
+
     <div>
 
     </div>

@@ -23,17 +23,17 @@ Route::get('/', function () {
 Route::view('/about',"about")->name("about-page");
 // Blogs
 Route::get('/blogs', [BlogController::class, 'index'])->name("blog-index");
-Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name("show-blog");
-Route::get('/create', [BlogController::class, 'create'])->name("create-blog")->middleware("auth");
+Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name("blog-show");
+Route::get('/create', [BlogController::class, 'create'])->name("blog-create")->middleware("auth")->can("create-blog");
 
-Route::post('/create', [BlogController::class, 'store'])->name("post-blog");
-Route::post('/blogs/{blog}', [CommentController::class, 'store'])->name("post-comment");
+Route::post('/create', [BlogController::class, 'store'])->name("blog-post");
+Route::post('/blogs/{blog}', [CommentController::class, 'store'])->name("comment-post");
 
 // Auth
-Route::get('/register', [UserController::class, 'index'])->name("user-register");
-Route::get('/login', [SessionController::class, "index"])->name("user-login");
-Route::get('/panel', [UserController::class, 'show'])->name("user-panel");
+Route::get('/register', [UserController::class, 'index'])->name("user-register")->middleware("guest");
+Route::get('/login', [SessionController::class, "index"])->name("user-login")->middleware("guest");
+Route::get('/panel', [UserController::class, 'show'])->name("user-panel")->middleware("auth");
 
-Route::delete('/logout', [SessionController::class, 'destroy'])->name("delete-user");
+Route::delete('/logout', [SessionController::class, 'destroy'])->name("delete-session");
 Route::post('/register', [UserController::class, 'store'])->name("post-user");
-Route::post('/login', [SessionController::class, 'store'])->name("post-session");
+Route::post('/login', [SessionController::class, 'store'])->name("session-post");

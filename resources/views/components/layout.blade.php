@@ -22,7 +22,9 @@
                         <x-link class="hover:border-b-2 duration-75" href="/register" :active="request()->is('register')">Register</x-link>
                     @endguest
                     @auth
-                        <img id="profile-icon" class="rounded-3xl mx-5 cursor-pointer" src="https://placehold.co/30x30">
+                        <a href="/panel">
+                            <img id="profile-icon" class="rounded-3xl mx-5 cursor-pointer" src="https://placehold.co/30x30">
+                        </a>
                     @endauth
                 </div>
             </nav>
