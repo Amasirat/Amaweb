@@ -5,10 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Comment;
+use Auth;
 use App\Models\User;
 
 class CommentController extends Controller
 {
+    public function index()
+    {
+        $comments = Auth::user()->comments;
+        return view("user.comments", [
+            "comments" => $comments
+        ]);
+    }
     public function store(Request $request, Blog $blog)
     {
         // Validate

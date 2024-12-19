@@ -20,6 +20,7 @@ Route::get('/', function () {
         "featured_blogs" => $featured_blogs
     ]);
 })->name("homepage");
+Route::view('/projects', view: "projects")->name("projects");
 Route::view('/about',"about")->name("about-page");
 // Blogs
 Route::get('/blogs', [BlogController::class, 'index'])->name("blog-index");
@@ -33,6 +34,7 @@ Route::post('/blogs/{blog}', [CommentController::class, 'store'])->name("comment
 Route::get('/register', [UserController::class, 'index'])->name("user-register")->middleware("guest");
 Route::get('/login', [SessionController::class, "index"])->name("user-login")->middleware("guest");
 Route::get('/panel', [UserController::class, 'show'])->name("user-panel")->middleware("auth");
+Route::get('/comments', [CommentController::class, 'index'])->name('user-comments')->middleware('auth');
 
 Route::delete('/logout', [SessionController::class, 'destroy'])->name("delete-session");
 Route::post('/register', [UserController::class, 'store'])->name("post-user");

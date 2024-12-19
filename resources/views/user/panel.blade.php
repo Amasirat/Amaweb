@@ -19,14 +19,12 @@
         </div>
 
     </div>
-
+        @can("create-blog")
         <div class="bg-white/5 mt-6 flex flex-col w-1/5 rounded-lg min-h-96 duration-300 max-md:w-full">
-            @can("create-blog")
             <x-link href="/create" class="text-sm font-bold text-center max-md:text-lg hover:bg-white/15 hover:border-white-100 hover:border-4 p-10">Create Blogs</x-link>
-            @endcan
             <x-link href="" class="text-sm font-bold text-center max-md:text-lg hover:bg-white/15 hover:border-white-100 hover:border-4 p-10">Favorites</x-link>
-            <x-link href="" class="text-sm font-bold text-center max-md:text-lg hover:bg-white/15 hover:border-white-100 hover:border-4 p-10">Comments</x-link>
         </div>
+        @endcan
 
     <div>
 

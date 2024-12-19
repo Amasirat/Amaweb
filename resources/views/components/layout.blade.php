@@ -10,20 +10,21 @@
 
     <div class="mb-5 items-center flex flex-row">
         <div class="w-1/2">
-            <nav class="w-screen sticky mt-4 pb-5 border-b border-white font-semibold text-xl flex flex-row justify-between max-sm:flex-col">
-                <div class="space-x-6 mx-4 flex flex-row max-sm:flex-col max-sm:space-y-5 max-sm:space-x-0">
-                    <x-link class="hover:border-b-2 duration-75" href="/" :active="request()->is('/')">Home</x-link>
-                    <x-link class="hover:border-b-2 duration-75" href="/blogs" :active="request()->is('blogs')">Blogs</x-link>
-                    <x-link class="hover:border-b-2 duration-75" href="/about" :active="request()->is('about')">About</x-link>
+            <nav class="w-screen sticky mt-4 pb-5 border-b border-white font-semibold text-xl flex flex-row justify-between max-md:flex-col max-md:space-y-10">
+                <div class="space-x-6 mx-4 flex flex-row max-md:flex-col max-md:space-y-10 max-sm:space-x-0">
+                    <x-link class="hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/" :active="request()->is('/')">Home</x-link>
+                    <x-link class="hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/blogs" :active="request()->is('blogs')">Blogs</x-link>
+                    <x-link class="hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/projects" :active="request()->is('projects')">Projects</x-link>
+                    <x-link class="hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/about" :active="request()->is('about')">About</x-link>
                 </div>
-                <div class="space-x-3 mx-4 max-sm:py-3 max-sm:space-x-0">
+                <div class="space-x-3 mx-4 flex flex-row max-sm:py-3 max-md:space-x-0 max-md:text-center max-md:space-y-10 max-md:flex-col">
                     @guest
-                        <x-link class="hover:border-b-2 transition-transform duration-75" href="/login" :active="request()->is('login')">Login</x-link>
-                        <x-link class="hover:border-b-2 duration-75" href="/register" :active="request()->is('register')">Register</x-link>
+                        <x-link class="hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/login" :active="request()->is('login')">Login</x-link>
+                        <x-link class="hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/register" :active="request()->is('register')">Register</x-link>
                     @endguest
                     @auth
                         <a href="/panel">
-                            <img id="profile-icon" class="rounded-3xl mx-5 cursor-pointer" src="https://placehold.co/30x30">
+                            <img id="profile-icon" class="max-md:mx-0 max-md:w-10 rounded-3xl mx-5 cursor-pointer" src="https://placehold.co/30x30">
                         </a>
                     @endauth
                 </div>

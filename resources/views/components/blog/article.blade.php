@@ -13,7 +13,7 @@
         </div>
 
         <div class="p-5">
-            <span class="font-bold">{{ $blog->title }}</span>
+            <span class="font-bold text-xl">{{ $blog->title }}</span>
         </div>
     </div>
 </a>

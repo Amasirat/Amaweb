@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
-use Parsedown;
+use Illuminate\Validation\Rules\File as FileRule;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 use App\MarkDownService;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -41,15 +43,22 @@ class BlogController extends Controller
         $attributes = $request->validate([
             "title" => ["required"],
             "body" => ["required"],
+            "image" => [FileRule::types(['jpg', 'png', 'webp'])]
         ]);
 
-        $image = null;
+        if($request["image"] == null)
+            $imagepath = null;
+        else
+        {
+
+            $imagepath = $attributes["image"]->store("blog");
+        }
 
         Blog::create([
             "title" => $attributes["title"],
             "body" => $attributes["body"],
             "user_id" => $user->id,
-            "image" => $image
+            "image" => $imagepath
         ]);
 
         return redirect("/blogs");

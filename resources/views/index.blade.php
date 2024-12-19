@@ -38,7 +38,7 @@
 
 
     <section class="space-y-2">
-        <x-title>Featured</x-title>
+        <h1 class="font-bold text-2xl pl-4">Featured</h1>
 
         <div class="border-t-2">
             <div class="flex flex-row justify-between w-full">
