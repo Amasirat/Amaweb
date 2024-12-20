@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" class="flex flex-col">
+<html lang="en" class="w-full flex flex-col">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amaweb</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-background text-white min-h-screen flex flex-col">
+<body class="w-full bg-background text-white min-h-screen flex flex-col">
 
     <div class="mb-5 items-center flex flex-row">
         <div class="w-1/2">
             <nav class="w-screen sticky mt-4 pb-5 border-b border-white font-semibold text-xl flex flex-row justify-between max-md:flex-col max-md:space-y-10">
-                <div class="space-x-6 mx-4 flex flex-row max-md:flex-col max-md:space-y-10 max-sm:space-x-0">
+                <div class="space-x-6 mx-4 flex flex-row max-md:flex-col max-md:space-y-10 max-md:space-x-0">
                     <x-link class="hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/" :active="request()->is('/')">Home</x-link>
                     <x-link class="hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/blogs" :active="request()->is('blogs')">Blogs</x-link>
                     <x-link class="hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/projects" :active="request()->is('projects')">Projects</x-link>

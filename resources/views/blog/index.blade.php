@@ -1,9 +1,9 @@
 <x-layout>
-    <div class="flex flex-row-reverse max-md:flex-col mt-10 mb-80">
-        <div class="w-1/2 h-24 flex flex-row justify-end mr-5 max-sm:justify-start max-sm:mx-3">
-            <input class="w-60 h-10 rounded-xl p-2 bg-white/30" type="text" placeholder="Search...">
+    <div class="flex flex-row-reverse max-md:flex-col mt-10">
+        <div class="w-1/2 h-24 flex flex-row justify-end max-md:justify-start max-md:w-11/12">
+            <input class="bg-white/30 rounded-xl w-full h-10 m-4 p-2" type="text" placeholder="Search...">
         </div>
-        <div class="w-11/12 pt-10 max-md:w-full">
+        <div class="w-11/12 max-md:w-full max-md:p-0 flex flex-col space-y-6">
 
             @if (count($blogs) == 0)
             <div class="flex flex-row justify-center mt-10">

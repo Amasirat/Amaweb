@@ -73,12 +73,8 @@
         <h1 class="font-bold text-2xl ml-2">Writing</h1>
         <div class="border-t-2">
             <x-project title="Second Awakening" href="https://archiveofourown.org/works/59630983/chapters/152087257">
-                This is a summary.
-                Deserunt laborum Lorem sint fugiat exercitation labore ipsum laboris
-                laboris labore sit ut officia ut. Nisi incididunt reprehenderit pariatur q
-                ui sint et laboris ut cupidatat in aliqua excepteur consectetur. Incididunt f
-                ugiat dolor pariatur culpa do ut id occaecat ut adipisicing eiusmod consectetur
-                amet duis. Officia est duis pariatur fugiat laboris magna tempor.
+                This story is what you would call fanfiction! Although I think it is not entirely true, because I can not
+                deem myself in good faith a *fan* of the original all that much.
             </x-project>
         </div>
     </div>

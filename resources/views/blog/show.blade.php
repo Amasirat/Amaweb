@@ -1,12 +1,13 @@
 <x-layout>
     <div class="flex flex-col">
-        <div class="mt-5 ml-10">
-            <div>
-                <img src="https://placehold.co/1200x600">
+        <div class="mt-5">
+            <div class="w-auto">
+                <img class="max-md:w-full w-10/12" src="https://placehold.co/820x600">
             </div>
-            <div class="mt-5 text-2xl font-bold">{{ $blog->title }}</div>
-            <div>
-                <div class="text-gray-300 mt-5 text-sm">{{ $blog->created_at }}</div>
+            <div class="mt-5 text-2xl font-bold ml-5">{{ $blog->title }}</div>
+
+            <div class="text-gray-300 mt-5 ml-5 text-sm">
+                    {{ $blog->created_at }}
             </div>
         </div>
 
@@ -27,8 +28,7 @@
                         <x-form.input-field label="guest_name"/>
                         <x-form.input-field label="email" />
                     @endguest
-                    <textarea name="body" class="text-white rounded-xl w-96 h-52 bg-white/25 p-5">
-                    </textarea>
+                    <textarea name="body" class="text-white rounded-xl max-w-96 max-sm:w-11/12 h-52 bg-white/25 p-5"></textarea>
                     <x-form.submit value="Comment" />
                 </x-form.form>
             </div>
