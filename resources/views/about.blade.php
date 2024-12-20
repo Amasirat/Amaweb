@@ -4,9 +4,9 @@
     </div>
 
     <div class="min-w-full">
-        <div class="bg-white/10 px-5 py-3 m-4 rounded-xl">
+        <div class="bg-white/10 px-5 py-3 m-4 rounded-xl min-h-96">
             <h2 class="py-5 font-bold text-4xl">What is this??</h2>
-            <p class="p-3">
+            <p class="p-3 text-xl">
                 Irure non sint fugiat nostrud Lorem cupidatat deserunt pariatur tempor aute ex qui.
                 Ex eserunt dolor occaecat aute adipisicing fugiat cillum eiusmod non laborum eiusmod.
                 Incididunt exercitation nostrud ullamco pariatur minim fugiat.

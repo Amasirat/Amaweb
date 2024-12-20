@@ -6,6 +6,7 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\SearchController;
 
 // Generic Views
 Route::get('/', function () {
@@ -26,6 +27,8 @@ Route::view('/about',"about")->name("about-page");
 Route::get('/blogs', [BlogController::class, 'index'])->name("blog-index");
 Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name("blog-show");
 Route::get('/create', [BlogController::class, 'create'])->name("blog-create")->middleware("auth")->can("create-blog");
+
+Route::get('/search', [BlogController::class, 'search'])->name("blog-search");
 
 Route::post('/create', [BlogController::class, 'store'])->name("blog-post");
 Route::post('/blogs/{blog}', [CommentController::class, 'store'])->name("comment-post");

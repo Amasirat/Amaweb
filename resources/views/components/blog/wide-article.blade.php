@@ -8,8 +8,8 @@
                 src="{{ Vite::asset('resources/images/placeholders/achildsDreamcover.png') }}">
         </div>
 
-        <div class="w-1/2 max-md:w-full flex flex-col space-y-5 p-6">
-            <div class="font-bold text-2xl">{{ $blog->title }}</div>
+        <div class="w-1/2 grid p-14 max-md:w-full max-md:p-6">
+            <div class="font-bold text-4xl self-center">{{ $blog->title }}</div>
         </div>
     </div>
 </a>

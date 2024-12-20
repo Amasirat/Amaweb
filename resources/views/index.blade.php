@@ -4,10 +4,10 @@
             <a href="/about"><img class="hover:border-8 hover:p-0 duration-300 cursor-pointer w-70 h-70 p-6" alt="main-image" src="{{ Vite::asset('resources/images/placeholders/city.jpg') }}"></a>
         </div>
         <div class="w-1/2 max-md:min-w-full">
-            <div class="bg-white/10 px-5 py-3 m-4 rounded-xl">
+            <div class="bg-white/10 px-5 py-3 m-4 min-h-full rounded-xl">
                 <h2 class="py-5 font-bold text-4xl">This is div2</h2>
 
-                <p class="p-3">
+                <p class="p-3 text-lg">
                     Reprehenderit culpa minim et sunt mollit.
                     Nostrud occaecat consequat magna ut officia cillum
                     veniam anim culpa consectetur dolor culpa.

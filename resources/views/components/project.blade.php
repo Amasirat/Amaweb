@@ -6,7 +6,7 @@
             <img class="rounded-xl max-lg:w-full h-full" src="{{$image}}" alt="project">
         </div>
 
-        <div class="w-2/3 flex flex-col">
+        <div class="w-2/3 flex flex-col max-lg:w-full">
             <div class="flex flex-row w-full p-6">
                 <h1 class="font-bold text-6xl mt-6">{{ $title }}</h1>
             </div>
