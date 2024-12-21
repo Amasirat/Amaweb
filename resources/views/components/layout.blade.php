@@ -34,16 +34,17 @@
 
     {{ $slot }}
 
-    <footer class="bg-white/5 h-52 w-full mt-64">
+    <footer class="bg-white/5 h-52 w-full mt-80">
         <div class="w-auto h-max flex flex-row">
             <div class="w-1/2 text-left mt-14 mx-5 font-bold text-xl">
                 Follow me on my socials, if you would so please!
             </div>
             <div class="w-1/2 flex flex-row justify-start items-center space-x-8 mt-14 ml-0 max-sm:flex-col max-sm:mx-5 max-sm:space-y-5 max-sm:mt-2 max-sm:place-items-end">
-                <a href="https://github.com/Amasirat"><img class="w-8" src="{{ Vite::asset(asset: 'resources/images/icons/icons8-github-48.png') }}" alt="github"></a>
-                <a href=""><img class="w-8" src="{{ Vite::asset('resources/images/icons/icons8-linkedin-50.png') }}" alt="linkedin"></a>
-                <a href=""><img class="w-8" src="{{ Vite::asset('resources/images/icons/icons8-youtube-48.png') }}" alt="youtube"></a>
-                <a href=""><img class="w-8" src="{{ Vite::asset('resources/images/icons/icons8-instagram-50.png') }}" alt="instagram"></a>
+                <a href="https://github.com/Amasirat"><img class="w-8 max-md:w-5" src="{{ Vite::asset(asset: 'resources/images/icons/github-icon.svg') }}" alt="github"></a>
+                <a href=""><img class="w-8 max-md:w-5" src="{{ Vite::asset('resources/images/icons/bluesky-icon.svg') }}" alt="bluesky"></a>
+                <a href="https://linkedin.com/in/amirhossein-basirat-355191287"><img class="w-8 max-md:w-5" src="{{ Vite::asset('resources/images/icons/linkedin-app-icon.svg') }}" alt="linkedin"></a>
+                <a href=""><img class="w-8 max-md:w-5" src="{{ Vite::asset('resources/images/icons/youtube-color-icon.svg') }}" alt="youtube"></a>
+                <a href=""><img class="w-8 max-md:w-5" src="{{ Vite::asset('resources/images/icons/ig-instagram-icon.svg') }}" alt="instagram"></a>
             </div>
         </div>
     </footer>

@@ -32,10 +32,11 @@
                     <x-form.submit value="Comment" />
                 </x-form.form>
             </div>
-
+            <div class="flex flex-col space-y-10">
             @foreach($blog->comments as $comment)
                 <x-blog.comment :comment="$comment" />
             @endforeach
+            </div>
         </div>
     </div>
 </x-layout>

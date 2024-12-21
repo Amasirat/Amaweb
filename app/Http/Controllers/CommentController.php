@@ -35,7 +35,8 @@ class CommentController extends Controller
             $attribute = $request->validate([
                 "body" => ["required"],
             ]);
-            $attribute= array_merge($attribute, ["blog_id" => $blog->id, "user_id" => $request->user()->id]);
+            $attribute= array_merge($attribute, ["blog_id" => $blog->id,
+                "user_id" => $request->user() != null ? $request->user()->id : null]);
         }
         // Store in table
         Comment::create($attribute);
