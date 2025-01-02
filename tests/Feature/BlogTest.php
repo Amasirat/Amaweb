@@ -8,8 +8,11 @@ test('hasComment', function () {
     $blog = Blog::factory()->create();
     $user = User::factory()->create();
     // action
-    $comment = Comment::create(["user_id" => $user->id, "blog_id" => $blog->id, "body" => "This is a comment"]);
+    $comment = Comment::create([
+        "user_id" => $user->id,
+        "blog_id" => $blog->id,
+        "body" => "This is a comment"
+    ]);
     // assert
     expect($comment->blog->id == $blog->id)->toBeTrue();
 });
-

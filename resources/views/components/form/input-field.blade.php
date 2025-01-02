@@ -5,7 +5,8 @@
         "class" => "w-64 rounded-md h-7 bg-white/25 p-3",
         "type" => $type,
         "name" => $label,
-        "placeholder" => ucfirst($title)
+        "placeholder" => ucfirst($title),
+        "value" => ""
     ]) }}>
 
 </div>

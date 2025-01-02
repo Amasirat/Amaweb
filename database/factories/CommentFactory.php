@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Comment;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\User;
 use App\Models\Blog;
@@ -21,7 +22,7 @@ class CommentFactory extends Factory
         return [
             "user_id" => User::factory()->create(),
             "blog_id" => Blog::factory()->create(),
-            "body" => fake()->paragraph()
+            "body" => fake()->paragraph(),
         ];
     }
 }

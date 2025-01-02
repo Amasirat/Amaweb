@@ -9,7 +9,7 @@
 
 @endphp
 
-<div class="bg-white/15 p-5 rounded-xl max-md:m-2">
+<div {{ $attributes->merge(['class' => "bg-white/15 p-5 rounded-xl max-md:m-2"])}}>
 
     <div class="flex flex-row justify-between">
         <div class="w-5/6 h-10 flex flex-row">

@@ -75,9 +75,11 @@ class BlogController extends Controller
         ]);
     }
 
-    public function edit()
+    public function edit(Blog $blog)
     {
-
+        return view("blog.edit", [
+            "blog" => $blog
+        ]);
     }
 
     public function destroy()

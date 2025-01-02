@@ -27,6 +27,7 @@ Route::view('/about',"about")->name("about-page");
 Route::get('/blogs', [BlogController::class, 'index'])->name("blog-index");
 Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name("blog-show");
 Route::get('/create', [BlogController::class, 'create'])->name("blog-create")->middleware("auth")->can("create-blog");
+Route::get('/edit', [BlogController::class, 'edit'])->name("blog-edit")->middleware("auth");
 
 Route::get('/search', [BlogController::class, 'search'])->name("blog-search");
 

@@ -9,6 +9,13 @@
             <div class="text-gray-300 mt-5 ml-5 text-sm">
                     {{ $blog->created_at }}
             </div>
+
+            <div class="p-5 flex flex-row space-x-5">
+                @can("edit-blog", $blog)
+                    <a class="text-blue-500" href="/edit">Edit</a>
+                    <a class="text-blue-500" href="">Delete</a>
+                @endcan
+            </div>
         </div>
 
         <div class="border-t-2 mt-5 p-10 text-md">
@@ -34,7 +41,15 @@
             </div>
             <div class="flex flex-col space-y-10">
             @foreach($blog->comments as $comment)
-                <x-blog.comment :comment="$comment" />
+                @if($comment->comment == null)
+                    <x-blog.comment :comment="$comment" />
+                @endif
+                @foreach($comment->children as $reply)
+                    <x-blog.comment class="ml-10 max-md:ml-5" :comment="$reply" />
+                    @foreach($reply->children as $reply)
+                        <x-blog.comment class="ml-15 max-md:ml-10x" :comment="$reply" />
+                    @endforeach
+                @endforeach
             @endforeach
             </div>
         </div>
