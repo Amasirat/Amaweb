@@ -37,7 +37,8 @@
     <footer class="bg-white/5 h-52 w-full mt-80">
         <div class="w-auto h-max flex flex-row">
             <div class="w-1/2 text-left mt-14 mx-5 font-bold text-xl">
-                Follow me on my socials, if you would so please!
+                These are the places I inhabit online..
+                <p class="text-sm font-normal">at least the ones I want you to know about lol</p>
             </div>
             <div class="w-1/2 flex flex-row justify-start items-center space-x-8 mt-14 ml-0 max-sm:flex-col max-sm:mx-5 max-sm:space-y-5 max-sm:mt-2 max-sm:place-items-end">
                 <a href="https://github.com/Amasirat"><img class="w-8 max-md:w-5" src="{{ Vite::asset(asset: 'resources/images/icons/github-icon.svg') }}" alt="github"></a>

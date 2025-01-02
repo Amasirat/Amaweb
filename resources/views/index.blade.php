@@ -1,31 +1,36 @@
 <x-layout>
     <section class="flex flex-row max-md:flex-col">
         <div class="w-1/2 max-md:min-w-full content-center">
-            <a href="/about"><img class="hover:border-8 hover:p-0 duration-300 cursor-pointer w-70 h-70 p-6" alt="main-image" src="{{ Vite::asset('resources/images/placeholders/city.jpg') }}"></a>
+            <a href="/about"><img class="hover:border-8 hover:p-0 duration-300 cursor-pointer w-70 h-70 p-6" alt="main-image" src="{{ Vite::asset('resources/images/homepage/2.1-An AbhorrentAbomination.jpg') }}"></a>
         </div>
         <div class="w-1/2 max-md:min-w-full">
             <div class="bg-white/10 px-5 py-3 m-4 min-h-full rounded-xl">
-                <h2 class="py-5 font-bold text-4xl">This is div2</h2>
-
-                <p class="p-3 text-lg">
-                    Reprehenderit culpa minim et sunt mollit.
-                    Nostrud occaecat consequat magna ut officia cillum
-                    veniam anim culpa consectetur dolor culpa.
-                    Cupidatat eiusmod dolor elit consectetur mollit
-                    exercitation incididunt enim Lorem duis dolore
-                    aute cupidatat. Aliquip eu esse laborum cupidatat
-                    eu cupidatat mollit do dolore dolore officia.
-
-                    Ad consequat nostrud ut voluptate ea proident
-                    ullamco in do dolor sunt officia commodo.
-                    Ipsum laborum nulla eu veniam nisi elit nostrud
-                    consequat est amet enim veniam tempor cupidatat.
-                    Pariatur veniam cupidatat veniam elit sint ea est
-                    ullamco nostrud tempor. Nulla consequat aute ullamco
-                    nostrud ut ex magna exercitation aute aliqua id.
-                    Sunt culpa excepteur ut cillum. Eu sunt reprehenderit
-                    id aute occaecat fugiat tempor.
+                <h2 class="py-5 font-bold text-4xl">Welcome!</h2>
+                <div class="p-3 text-lg space-y-4">
+                <p>
+                   If you have found this website, either on your journey of surfing through the net
+                   (Pretty old fashioned but respectable) or getting a link to it from me or anyone else, welcome!
+                   You will find many valuable information on this website, such as...my projects....my thoughts on things...,
+                   mainly my thoughts on things to be honest.
+                   It's a very me centered website as most personal websites are I guess.
                 </p>
+                <p>
+                   You also have the incredible feature of...drumroll!!!!...Making an account on my personal website.
+                   That way I can make sure you get the latest valuable information on my next thinkpiece. That's exactly
+                   what you need in your life right now! (That feature is still pending...)
+                </p>
+                <p>
+                   Who am I? I am many things! I am a Computer Engineering student, a musician, a composer, a writer,
+                   and someone who wants to draw. I have many thoughts and many interests and this site is both my way of showing that off
+                   while also having said that I have worked on a Laravel project and I know what I'm talking about!
+                </p>
+                <p>
+                   So feel free to browse around! Make yourself at home!.
+                </p>
+                <p>
+                    Check out the Blogs section for my latest <i>musings</i>
+                </p>
+                </div>
             </div>
         </div>
     </section>

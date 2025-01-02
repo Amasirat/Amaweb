@@ -43,22 +43,22 @@ class BlogController extends Controller
         $attributes = $request->validate([
             "title" => ["required"],
             "body" => ["required"],
-            "image" => [FileRule::types(['jpg', 'png', 'webp'])]
+            "image" => [],
+            // "image" => [FileRule::types(['jpg', 'png', 'webp'])]
         ]);
 
-        if($request["image"] == null)
-            $imagepath = null;
+        if($request->image == null)
+            $imagePath = null;
         else
         {
-
-            $imagepath = $attributes["image"]->store("blog");
+            $imagePath = $attributes["image"]->store('blogs');
         }
 
         Blog::create([
             "title" => $attributes["title"],
             "body" => $attributes["body"],
             "user_id" => $user->id,
-            "image" => $imagepath
+            "image" => $imagePath
         ]);
 
         return redirect("/blogs");

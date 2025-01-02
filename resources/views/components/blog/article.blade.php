@@ -2,7 +2,7 @@
 
 @php
     if(! is_null($blog->image))
-        $blogImage = Vite::asset($blog->image);
+        $blogImage = asset('storage/'.$blog->image);
     else
         $blogImage = "https://placehold.co/500x400";
 @endphp
