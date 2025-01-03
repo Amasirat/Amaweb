@@ -24,7 +24,10 @@
                     @endguest
                     @auth
                         <a href="/panel">
-                            <img id="profile-icon" class="max-md:mx-0 max-md:w-10 rounded-3xl mx-5 cursor-pointer" src="https://placehold.co/30x30">
+                            <img id="profile-icon" class="max-md:mx-0 max-md:w-10 rounded-3xl mx-5 cursor-pointer w-8 h-8" src="{{
+                        (Auth::user()->profile_pic != null) ?
+                        'storage/'.Auth::user()->profile_pic :
+                        Vite::asset('resources/images/placeholders/icons8-customer-50.png') }}">
                         </a>
                     @endauth
                 </div>

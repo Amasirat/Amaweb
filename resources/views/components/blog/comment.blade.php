@@ -14,7 +14,12 @@
     <div class="flex flex-row justify-between">
         <div class="w-5/6 h-10 flex flex-row">
             <div class="h-auto">
-                <img class="h-full w-full rounded-3xl" src="https://placehold.co/10" alt="profile_picture">
+                <img class="h-full w-full rounded-3xl" src="{{
+                ($comment->user != null) ?
+                        'storage/'.$comment->user->profile_pic :
+                        Vite::asset('resources/images/placeholders/icons8-customer-50.png') }}"
+
+                    alt="profile_picture">
             </div>
 
             <div class="text-sm w-1/2 p-2">

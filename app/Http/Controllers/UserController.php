@@ -41,6 +41,21 @@ class UserController extends Controller
         return redirect("/");
     }
 
+    public function edit_image(Request $request)
+    {
+        $attributes = $request->validate([
+            "image" => ["required"]
+        ]);
+
+        $user = Auth::user();
+
+        $imagePath = $attributes["image"]->store('users');
+
+        User::where("id", $user->id)->update(array("profile_pic" => $imagePath));
+
+        return redirect("/panel");
+    }
+
     public function edit(User $user)
     {
         // TODO

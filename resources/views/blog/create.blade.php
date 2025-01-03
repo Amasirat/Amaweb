@@ -2,10 +2,10 @@
     <x-form.form action="/create" :hasFile="true">
         <div class="flex flex-row justify-between max-sm:flex-col max-sm:space-y-8">
         <div class="flex flex-col">
-            <x-form.input-field class="h-14 w-96" name="title" label="title" type="text"/>
+            <x-form.input-field class="h-9 w-96" name="title" label="title" type="text"/>
             <x-form.error field="title" />
         </div>
-            <x-form.input-field class="h-14 w-72" name="image" label="image" type="file" />
+            <x-form.input-field class="h-9 w-72" name="image" label="image" type="file" />
             <x-form.error field="image" />
         </div>
 

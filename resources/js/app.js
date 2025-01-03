@@ -1,4 +1,5 @@
 import './bootstrap';
+import './panel.js';
 
 document.addEventListener("DOMContentLoaded", () => {
     const scrollableDiv = document.getElementById("scrollable-div");
