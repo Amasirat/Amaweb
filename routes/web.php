@@ -39,7 +39,7 @@ Route::get('/register', [UserController::class, 'index'])->name("user-register")
 Route::get('/login', [SessionController::class, "index"])->name("user-login")->middleware("guest");
 Route::get('/panel', [UserController::class, 'show'])->name("user-panel")->middleware("auth");
 Route::get('/comments', [CommentController::class, 'index'])->name('user-comments')->middleware('auth');
-Route::patch('/upload-image', [UserController::class, 'edit_image'])->name("user-edit-image");
+Route::patch('/upload-image', [UserController::class, 'edit'])->name("user-edit-image");
 Route::delete('/logout', [SessionController::class, 'destroy'])->name("delete-session");
 Route::post('/register', [UserController::class, 'store'])->name("post-user");
 Route::post('/login', [SessionController::class, 'store'])->name("session-post");

@@ -20,12 +20,6 @@ class UserController extends Controller
             "user" => Auth::user()
         ]);
     }
-
-    public function create(User $user)
-    {
-
-    }
-
     public function store(Request $request)
     {
         $attributes = $request->validate([
@@ -41,7 +35,7 @@ class UserController extends Controller
         return redirect("/");
     }
 
-    public function edit_image(Request $request)
+    public function edit(Request $request)
     {
         $attributes = $request->validate([
             "image" => ["required"]
@@ -54,11 +48,6 @@ class UserController extends Controller
         User::where("id", $user->id)->update(array("profile_pic" => $imagePath));
 
         return redirect("/panel");
-    }
-
-    public function edit(User $user)
-    {
-        // TODO
     }
     public function destroy(User $user)
     {
