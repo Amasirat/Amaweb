@@ -1,7 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Facade;
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -124,5 +123,10 @@ return [
     ],
 
     'Markdom' => Sinnbeck\Markdom\Facades\Markdom::class,
+
+    'aliases' => Facade::defaultAliases()->merge([
+        'Vite' => Illuminate\Support\Facades\Vite::class,
+        'Auth' => Illuminate\Support\Facades\Auth::class
+    ])->toArray(),
 
 ];

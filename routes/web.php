@@ -2,11 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Blog;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CommentController;
-use App\Http\Controllers\SearchController;
 
 // Generic Views
 Route::get('/', function () {

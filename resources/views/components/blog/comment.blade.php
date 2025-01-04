@@ -17,7 +17,7 @@
                 <img class="h-full w-full rounded-3xl" src="{{
                 ($comment->user != null) ?
                         'storage/'.$comment->user->profile_pic :
-                        Vite::asset('resources/images/placeholders/icons8-customer-50.png') }}"
+                        asset('resources/images/placeholders/icons8-customer-50.png') }}"
 
                     alt="profile_picture">
             </div>

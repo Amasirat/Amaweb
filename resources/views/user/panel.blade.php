@@ -16,7 +16,7 @@
                     <button class="hover:bg-white/5 duration-300 bg-white/35 p-2 rounded-lg font-bold" id="picture-button">Edit Picture</button>
                     <div class="bg-black/60 rounded-lg absolute invisible" id="picture-upload-div">
                         <x-form.form method="PATCH" action="/upload-image" :hasFile="true">
-                            <x-form.input-field class="h-9 p-2" type="file" name="image" label="Image"/>
+                            <x-form.input-field class="h-9 p-1" type="file" name="image" label="Image"/>
                             <x-form.submit value="Upload" />
                         </x-form.form>
                     </div>

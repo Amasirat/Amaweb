@@ -1,5 +1,11 @@
 import './bootstrap';
 import './panel.js';
+// import './editor.js';
+// window.Vue = require('vue');
+
+// import Quill from 'quill';
+
+// Vue.use(Quill);
 
 document.addEventListener("DOMContentLoaded", () => {
     const scrollableDiv = document.getElementById("scrollable-div");
@@ -14,3 +20,4 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollableDiv.scrollBy({ left: 200, behavior: "smooth" });
     });
 });
+
