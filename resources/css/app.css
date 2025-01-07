@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+    @apply font-bold text-9xl;
+}
+
+h2 {
+    @apply font-bold text-8xl;
+}
+
+h3 {
+    @apply font-bold text-6xl;
+}
+
+h4 {
+    @apply font-bold text-4xl;
+}
+
+h5 {
+    @apply font-bold text-2xl;
+}
+
+h6 {
+    @apply font-bold text-xl;
+}
+
+ul {
+    @apply list-disc p-5;
+}
+
+a {
+    @apply text-blue-500;
+}
+
+code {
+    @apply text-gray-500 min-h-52 min-w-60;
+}
+
+hr {
+    @apply mb-2;
+}
+
+table {
+    @apply border;
+}
+
+th {
+    @apply font-bold p-6;
+}
+
+td {
+    @apply border p-6 text-center;
+}

@@ -1,6 +1,6 @@
 @props(["title" => "Title", "image" => "https://placehold.co/500x400", "href" => "#"])
 
-<a href="{{ $href }}">
+<a class="text-white" href="{{ $href }}">
     <div class="rounded-xl bg-white/5 min-h-96 flex flex-row max-lg:w-full max-lg:flex-col p-8 hover:bg-white/15">
         <div class="w-1/3 max-xl:w-1/4 max-lg:w-full">
             <img class="rounded-xl max-lg:w-full h-full" src="{{$image}}" alt="project">

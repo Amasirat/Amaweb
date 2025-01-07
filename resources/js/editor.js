@@ -1,11 +1,11 @@
-import Quill from 'quill'
-// import "quill/dist/quill.core.css";
+import { createWysimark } from "@wysimark/standalone";
 
-const options = {
-    modules: {
-      toolbar: true,
-    },
-    placeholder: 'Compose an epic...',
-    theme: "snow",
-  };
-const quill = new Quill('#editor', options);
+document.addEventListener("DOMContentLoaded", () => {
+
+    const editorContainer = document.getElementById("blog-editor");
+
+    const wysimark = createWysimark(editorContainer, {
+        initialMarkdown: "# Hello World!",
+        placeholder: "Write Here..."
+    });
+});

@@ -11,7 +11,8 @@
             <x-form.error field="image" />
         </div>
 
-        <div name="content"></div>
+        <textarea class="bg-white/20 rounded-lg min-h-96 p-5" name="body" placeholder="Write here..."></textarea>
+
         <x-form.error field="body" />
         <x-form.submit value="Post" />
     </x-form.form>

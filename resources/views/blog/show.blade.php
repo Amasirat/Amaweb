@@ -12,8 +12,7 @@
 
             <div class="p-5 flex flex-row space-x-5">
                 @can("edit-blog", $blog)
-                    <a class="text-blue-500" href="/edit">Edit</a>
-                    <a class="text-blue-500" href="">Delete</a>
+                    <a class="text-blue-500" href="/blogs/{{$blog->id}}/edit">Edit</a>
                 @endcan
             </div>
         </div>

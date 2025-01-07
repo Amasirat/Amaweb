@@ -37,6 +37,13 @@ class BlogController extends Controller
         ]);
     }
 
+    public function edit(Blog $blog)
+    {
+        return view("blog.edit", [
+            "blog" => $blog
+        ]);
+    }
+
     public function store(Request $request)
     {
         $user = Auth::user();
@@ -76,15 +83,22 @@ class BlogController extends Controller
         ]);
     }
 
-    public function edit(Blog $blog)
+    public function update(Blog $blog)
     {
-        return view("blog.edit", [
-            "blog" => $blog
+        $attributes = request()->validate([
+            "title" => ["required"],
+            "body" => ["required"],
+            "image" => []
         ]);
+
+        $blog->update($attributes);
+
+        return redirect("/blogs/".$blog->id);
+
     }
-
-    public function destroy()
+    public function destroy(Blog $blog)
     {
-
+        $blog->delete();
+        return redirect('/blogs');
     }
 }

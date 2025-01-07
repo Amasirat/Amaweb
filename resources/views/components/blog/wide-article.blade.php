@@ -1,6 +1,6 @@
 @props(["blog"])
 
-<a href="/blogs/{{ $blog->id }}">
+<a class="text-white" href="/blogs/{{ $blog->id }}">
     <div class="bg-white/15 rounded-xl flex flex-row max-lg:flex-col w-full h-auto p-4 hover:bg-white/45 duration-500">
 
         <div class="w-1/3 max-lg:w-full">

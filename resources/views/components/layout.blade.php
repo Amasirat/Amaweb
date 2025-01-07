@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amaweb</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="w-full bg-background text-white min-h-screen flex flex-col">
@@ -12,10 +17,10 @@
         <div class="w-1/2">
             <nav class="w-screen sticky mt-4 pb-5 border-b border-white font-semibold text-xl flex flex-row justify-between max-md:flex-col max-md:space-y-10">
                 <div class="space-x-6 mx-4 flex flex-row max-md:flex-col max-md:space-y-10 max-md:space-x-0">
-                    <x-link class="hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/" :active="request()->is('/')">Home</x-link>
-                    <x-link class="hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/blogs" :active="request()->is('blogs')">Blogs</x-link>
-                    <x-link class="hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/projects" :active="request()->is('projects')">Projects</x-link>
-                    <x-link class="hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/about" :active="request()->is('about')">About</x-link>
+                    <x-link class="text-white hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/" :active="request()->is('/')">Home</x-link>
+                    <x-link class="text-white hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/blogs" :active="request()->is('blogs')">Blogs</x-link>
+                    <x-link class="text-white hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/projects" :active="request()->is('projects')">Projects</x-link>
+                    <x-link class="text-white hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/about" :active="request()->is('about')">About</x-link>
                 </div>
                 <div class="space-x-3 mx-4 flex flex-row max-sm:py-3 max-md:space-x-0 max-md:text-center max-md:space-y-10 max-md:flex-col">
                     @guest

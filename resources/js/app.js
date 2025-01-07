@@ -1,12 +1,8 @@
 import './bootstrap';
 import './panel.js';
-// import './editor.js';
-// window.Vue = require('vue');
+import './editor.js';
 
-// import Quill from 'quill';
-
-// Vue.use(Quill);
-
+// Featured Slider
 document.addEventListener("DOMContentLoaded", () => {
     const scrollableDiv = document.getElementById("scrollable-div");
     const scrollLeftButton = document.getElementById("scroll-left");
@@ -20,4 +16,5 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollableDiv.scrollBy({ left: 200, behavior: "smooth" });
     });
 });
+
 
