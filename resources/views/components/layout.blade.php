@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
-
-    <!-- Fonts -->
-    <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="w-full bg-background text-white min-h-screen flex flex-col">
@@ -24,8 +19,8 @@
                 </div>
                 <div class="space-x-3 mx-4 flex flex-row max-sm:py-3 max-md:space-x-0 max-md:text-center max-md:space-y-10 max-md:flex-col">
                     @guest
-                        <x-link class="hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/login" :active="request()->is('login')">Login</x-link>
-                        <x-link class="hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/register" :active="request()->is('register')">Register</x-link>
+                        <x-link class="text-white hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/login" :active="request()->is('login')">Login</x-link>
+                        <x-link class="text-white hover:border-b-2 duration-75 max-md:text-center max-md:p-5 max-md:hover:border-2" href="/register" :active="request()->is('register')">Register</x-link>
                     @endguest
                     @auth
                         <a href="/panel">
@@ -50,9 +45,9 @@
             </div>
             <div class="w-1/2 flex flex-row justify-start items-center space-x-8 mt-14 ml-0 max-sm:flex-col max-sm:mx-5 max-sm:space-y-5 max-sm:mt-2 max-sm:place-items-end">
                 <a href="https://github.com/Amasirat"><img class="w-8 max-md:w-5" src="{{ Vite::asset(asset: 'resources/images/icons/github-icon.svg') }}" alt="github"></a>
-                <a href=""><img class="w-8 max-md:w-5" src="{{ Vite::asset('resources/images/icons/bluesky-icon.svg') }}" alt="bluesky"></a>
+                <a href="https://bsky.app/profile/amasirat.bsky.social"><img class="w-8 max-md:w-5" src="{{ Vite::asset('resources/images/icons/bluesky-icon.svg') }}" alt="bluesky"></a>
                 <a href="https://linkedin.com/in/amirhossein-basirat-355191287"><img class="w-8 max-md:w-5" src="{{ Vite::asset('resources/images/icons/linkedin-app-icon.svg') }}" alt="linkedin"></a>
-                <a href=""><img class="w-8 max-md:w-5" src="{{ Vite::asset('resources/images/icons/youtube-color-icon.svg') }}" alt="youtube"></a>
+                <a href="https://youtube.com/@amasirat?si=pI9tV6i1lDtryUsE"><img class="w-8 max-md:w-5" src="{{ Vite::asset('resources/images/icons/youtube-color-icon.svg') }}" alt="youtube"></a>
                 <a href=""><img class="w-8 max-md:w-5" src="{{ Vite::asset('resources/images/icons/ig-instagram-icon.svg') }}" alt="instagram"></a>
             </div>
         </div>

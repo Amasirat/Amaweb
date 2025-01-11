@@ -1,6 +1,6 @@
 <x-layout>
     <div class="min-w-full content-center">
-        <img class="max-sm:h-1/2 p-6" alt="main-image" src="{{ Vite::asset('resources/images/homepage/2.1-An AbhorrentAbomination.jpg') }}">
+        <img class="max-sm:h-1/2 p-6" alt="main-image" src="{{ Vite::asset('resources/images/homepage/portrait.jpg') }}">
     </div>
 
     <div class="min-w-full">
