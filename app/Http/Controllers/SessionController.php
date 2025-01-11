@@ -31,11 +31,6 @@ class SessionController extends Controller
         return redirect('/blogs');
     }
 
-    public function edit()
-    {
-        // TODO
-    }
-
     public function destroy()
     {
         Auth::logout();
