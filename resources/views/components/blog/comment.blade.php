@@ -10,15 +10,13 @@
 @endphp
 
 <div {{ $attributes->merge(['class' => "bg-white/15 p-5 rounded-xl max-md:m-2"])}}>
-
     <div class="flex flex-row justify-between">
         <div class="w-5/6 h-10 flex flex-row">
-            <div class="h-auto">
+            <div class="h-auto w-10">
                 <img class="h-full w-full rounded-3xl" src="{{
-                ($comment->user != null) ?
-                        'storage/'.$comment->user->profile_pic :
-                        asset('resources/images/placeholders/icons8-customer-50.png') }}"
-
+                $comment->user != null ? Vite::asset('storage/'.$comment->user->profile_pic) :
+                        Vite::asset('resources/images/placeholders/icons8-customer-50.png')
+                    }}"
                     alt="profile_picture">
             </div>
 

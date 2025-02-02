@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="w-full flex flex-col">
+<html lang="en" class="flex flex-col">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config('app.name', 'Laravel') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="w-full bg-background text-white min-h-screen flex flex-col">
+<body class="bg-background text-white min-h-screen flex flex-col">
 
     <div class="mb-5 items-center flex flex-row">
         <div class="w-1/2">
@@ -26,8 +26,8 @@
                         <a href="/panel">
                             <img id="profile-icon" class="max-md:mx-0 max-md:w-10 rounded-3xl mx-5 cursor-pointer w-8 h-8" src="{{
                         (Auth::user()->profile_pic != null) ?
-                        'storage/'.Auth::user()->profile_pic :
-                        Vite::asset('resources/images/placeholders/icons8-customer-50.png') }}">
+                        asset('storage/'.Auth::user()->profile_pic) :
+                        asset('resources/images/placeholders/icons8-customer-50.png') }}">
                         </a>
                     @endauth
                 </div>
