@@ -21,13 +21,6 @@ return new class extends Migration
             $table->string("image")->nullable();
             $table->timestamps();
         });
-
-        Schema::create('blog_user', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(Blog::class);
-            $table->foreignIdFor(User::class);
-            $table->timestamps();
-        });
     }
 
     /**

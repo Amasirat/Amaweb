@@ -88,7 +88,6 @@ class BlogController extends Controller
         $attributes = request()->validate([
             "title" => ["required"],
             "body" => ["required"],
-            "image" => []
         ]);
 
         $blog->update($attributes);

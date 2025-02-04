@@ -7,11 +7,9 @@
             <x-form.input-field class="h-14 w-96" name="title" label="title" value="{{ $blog->title }}" type="text"/>
             <x-form.error field="title" />
         </div>
-            <x-form.input-field class="h-14 w-72" name="image" label="image" type="file" />
-            <x-form.error field="image" />
         </div>
 
-        <textarea name="body" class="bg-white/35 rounded-lg min-h-96 p-5" placeholder="Write Here...">
+        <textarea name="body" class="whitespace-pre-wrap bg-white/35 rounded-lg min-h-96 p-5" placeholder="Write Here...">
             {{$blog->body}}
         </textarea>
         <x-form.error field="body" />
