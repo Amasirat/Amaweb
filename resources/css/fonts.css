@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'rawwatan';
+    src: url('/resources/fonts/Rawwatan-vm1jM.ttf');
+}
+
+@font-face {
+    font-family: 'backnotes';
+    src: url('/resources/fonts/BacknotesRegular-mLpna.otf');
+}
+
+@font-face {
+    font-family: 'beautiful-valentine';
+    src: url('/resources/fonts/Beautiful-Valentine-BF64da26cde9038.otf');
+}
+
+@font-face {
+    font-family: 'pokra';
+    src: url('/resources/fonts/Pokra.otf');
+}
+
+@font-face {
+    font-family: 'waffle-mango';
+    src: url('/resources/fonts/Waffle Mango.ttf');
+}
+
+@font-face {
+    font-family: 'soul-daisy';
+    src: url('/resources/fonts/SoulDaisy.otf');
+}
+
+body {
+    font-family: 'soul-daisy' !important;
+}
