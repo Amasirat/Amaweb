@@ -53,6 +53,7 @@ class BlogController extends Controller
             "body" => ["required"],
             "image" => [FileRule::types(['jpg', 'png', 'webp']), 'max:5120']
         ]);
+        // TODO: some images for some reason fail to upload. Get to the bottom of that
 
         if($request->image == null)
             $imagePath = null;

@@ -62,7 +62,7 @@
         <div class="border-t-2 flex flex-col space-y-10">
             <x-project :image="Vite::asset('resources/images/projects/your-love-is-a-drug.jpg')" title="Your Love is a Drug Cover" href="https://archiveofourown.org/works/59630983/chapters/152087257">
                 My first ever cover made in Reaper using synths. Music production is a whole another world of music than doing
-                music with notation softwares.
+                music with notation softwares. For my first attempt, I believe it went as well as it could.
             </x-project>
 
             <x-project :image="Vite::asset('resources/images/projects/requiem of silence.jpg')" title="Requiem of Silence" href="https://archiveofourown.org/works/59630983/chapters/152087257">
@@ -77,7 +77,8 @@
         <h1 class="font-bold text-2xl ml-2">Writing</h1>
         <div class="border-t-2">
             <x-project title="Second Awakening" href="https://archiveofourown.org/works/59630983/chapters/152087257">
-                This story is what you would call fanfiction! It's a result
+                This story is what you would call fanfiction! It's a result of my over-ambitious mind and a dream! It's incredibly slow to update
+                but once it does...well nothing happens. A new chapter releases. What did you expect?
             </x-project>
         </div>
     </div>

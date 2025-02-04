@@ -1,6 +1,5 @@
 import './bootstrap';
 import './panel.js';
-import './editor.js';
 
 // Featured Slider
 document.addEventListener("DOMContentLoaded", () => {

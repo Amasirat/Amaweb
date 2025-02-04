@@ -19,7 +19,24 @@
                     and this drawing will be proof that talent does not exist.
                 </p>
                 <p>
-                    utdutdutdutdudtutdutdutdutdtd
+                    If your question was instead aimed at this website, well....damn I didn't think my SEO would
+                    be so good to catch you boys in here. I thought google had become a hellscape, how did you find this thing?
+                    Well, no worries. It's not really that interesting. It's a small personal project for a computer student out
+                    of a desperate need to convince recruiters to hire him. That's really all!
+                </p>
+
+                <p>
+                    Speaking of which, you can find my resume <a href="storage/Resume.pdf">here</a>.
+                </p>
+
+                <p>
+                    As for who I am, Hi, I am Amirhossein, The name's hard to pronounce so I go with Amasirat online.
+                    I do many things but I am a programmer/Computer Scientist, if you'd like to box me into
+                    a singular social identity. That's what I'm studying at university so I suppose that's fair!
+                </p>
+
+                <p>
+                    Contact me on Email here: amir.basirat.2004@gmail.com
                 </p>
             </div>
         </div>
