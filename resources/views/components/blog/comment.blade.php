@@ -14,8 +14,8 @@
         <div class="w-5/6 h-10 flex flex-row">
             <div class="h-auto w-10">
                 <img class="h-full w-full rounded-3xl" src="{{
-                $comment->user != null ? Vite::asset('storage/'.$comment->user->profile_pic) :
-                        Vite::asset('resources/images/placeholders/icons8-customer-50.png')
+                $comment->user != null ? Vite::asset('/public/storage/'.$comment->user->profile_pic) :
+                        Vite::asset('/resources/images/placeholders/icons8-customer-50.png')
                     }}"
                     alt="profile_picture">
             </div>

@@ -36,7 +36,7 @@
         <div class="bg-white/5 mt-6 flex flex-col w-1/5 rounded-lg h-auto duration-300 max-md:w-full">
             <x-link href="/create" class="text-white text-sm font-bold text-center max-md:text-lg hover:bg-white/15 hover:border-white-100 hover:border-4 p-10">Create Blogs</x-link>
             <x-link href="/create" class="text-white text-sm font-bold text-center max-md:text-lg hover:bg-white/15 hover:border-white-100 hover:border-4 p-10">Favorites</x-link>
-            <x-link href="/create" class="text-white text-sm font-bold text-center max-md:text-lg hover:bg-white/15 hover:border-white-100 hover:border-4 p-10">Comments</x-link>
+            <x-link href="/comments" class="text-white text-sm font-bold text-center max-md:text-lg hover:bg-white/15 hover:border-white-100 hover:border-4 p-10">Comments</x-link>
         </div>
         @endcan
 
