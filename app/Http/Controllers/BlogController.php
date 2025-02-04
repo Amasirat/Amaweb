@@ -51,8 +51,7 @@ class BlogController extends Controller
         $attributes = $request->validate([
             "title" => ["required"],
             "body" => ["required"],
-            "image" => [],
-            // "image" => [FileRule::types(['jpg', 'png', 'webp'])]
+            "image" => [FileRule::types(['jpg', 'png', 'webp']), 'max:5120']
         ]);
 
         if($request->image == null)
@@ -97,7 +96,15 @@ class BlogController extends Controller
     }
     public function destroy(Blog $blog)
     {
-        $blog->delete();
+        if($blog->image == null)
+        {
+            $blog->delete();
+        }
+        else if(file_exists(public_path().'/storage/'.$blog->image))
+        {
+            unlink(public_path().'/storage/'.$blog->image);
+            $blog->delete();
+        }
         return redirect('/blogs');
     }
 }
