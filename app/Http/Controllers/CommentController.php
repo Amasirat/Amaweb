@@ -6,13 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 
 class CommentController extends Controller
 {
     public function index()
     {
-        $comments = Auth::user()->comments;
+        $pagination = 5;
+        $comments = Auth::user()->comments->reverse();
         return view("user.comments", [
             "comments" => $comments
         ]);
