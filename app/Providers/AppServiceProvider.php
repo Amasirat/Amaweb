@@ -35,7 +35,8 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Gate::define("edit-comment", function (User $user, Comment $comment) {
-            return $comment->user() == $user;
+            return $comment->user != null && ($comment->user() == $user);
+            // null check is for comments that are guest comments and belong to no user
         });
     }
 }

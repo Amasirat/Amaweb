@@ -1,3 +1,4 @@
+@vite('resources/js/scroll.js')
 <x-layout>
     <section class="flex flex-row max-md:flex-col">
         <div class="w-1/2 max-md:min-w-full content-center">
@@ -65,7 +66,7 @@
 
                 @if($featured_blogs->count() == 0)
                     <div class="h-auto p-24">
-                        <span class="p-28 text-white/30">No Featured blogs yet...I've got a massive case of writer's block guys!</span>
+                        <span class="p-28 min-xl:p-32 text-white/30">No Featured blogs yet...I've got a massive case of writer's block guys!</span>
                     </div>
                 @endif
             </div>

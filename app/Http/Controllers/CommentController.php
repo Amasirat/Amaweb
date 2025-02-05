@@ -21,11 +21,10 @@ class CommentController extends Controller
     {
         // Validate
         $attribute = null;
-        if($request["guest_name"] != null && $request["email"] != null)
+        if($request["guest_name"] != null)
         {
             $attribute = $request->validate([
                 "guest_name" => ["required"],
-                "email" => ["required"],
                 "body" => ["required"],
             ]);
             $attribute = array_merge($attribute, ["blog_id" => $blog->id]);
@@ -42,9 +41,19 @@ class CommentController extends Controller
         Comment::create($attribute);
         return redirect("/blogs/$blog->id");
     }
-    public function edit()
+    public function edit(Request $request)
     {
+        $validated = $request->validate([
+            "edited" => ["required"],
+            // this is for finding comment in database
+            // given by a hidden textarea inside the view
+            "comment_id" => ["required"]
+        ]);
+        $comment = Comment::findOrFail((int)$request["comment_id"]);
 
+        $comment->update(['body' => $validated["edited"]]);
+
+        return redirect()->back();
     }
     public function destroy()
     {

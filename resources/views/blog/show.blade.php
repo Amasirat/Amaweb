@@ -12,7 +12,7 @@
 
             <div class="p-5 flex flex-row space-x-5">
                 @can("edit-blog", $blog)
-                    <a class="text-blue-500" href="/blogs/{{$blog->id}}/edit">Edit</a>
+                    <a href="/blogs/{{$blog->id}}/edit">Edit</a>
                 @endcan
             </div>
         </div>
@@ -32,24 +32,14 @@
                 <x-form.form>
                     @guest
                         <x-form.input-field label="guest_name"/>
-                        <x-form.input-field label="email" />
                     @endguest
-                    <textarea name="body" class="text-white rounded-xl max-w-96 max-sm:w-11/12 h-52 bg-white/25 p-5"></textarea>
+                    <x-blog.textarea name="body" />
                     <x-form.submit value="Comment" />
                 </x-form.form>
             </div>
+
             <div class="flex flex-col space-y-10">
-            @foreach($blog->comments as $comment)
-                @if($comment->comment == null)
-                    <x-blog.comment :comment="$comment" />
-                @endif
-                @foreach($comment->children as $reply)
-                    <x-blog.comment class="ml-10 max-md:ml-5" :comment="$reply" />
-                    @foreach($reply->children as $reply)
-                        <x-blog.comment class="ml-15 max-md:ml-10x" :comment="$reply" />
-                    @endforeach
-                @endforeach
-            @endforeach
+               <x-blog.displaycomment :comments="$blog->comments->reverse()" />
             </div>
         </div>
     </div>

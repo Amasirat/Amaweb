@@ -1,3 +1,4 @@
+@vite('resources/js/panel.js')
 <x-layout>
     <div class="flex flex-row max-sm:flex-col w-full max-sm:space-y-6">
         <div class="flex flex-row w-2/3 max-sm:flex-col">
@@ -13,8 +14,8 @@
                 <span class="font-bold text-xl">{{ ucfirst($user->username) }}</span>
                 <span class="text-sm">{{ $user->email }}</span>
                 <div>
-                    <button class="hover:bg-white/5 duration-300 bg-white/35 p-2 rounded-lg font-bold" id="picture-button">Edit Picture</button>
-                    <div class="bg-black/60 rounded-lg absolute invisible" id="picture-upload-div">
+                    <x-form.button id="picture-button">Edit Picture</x-form.button>
+                    <div class="bg-black/60 rounded-lg absolute hidden" id="picture-upload-div">
                         <x-form.form method="PATCH" action="/upload-image" :hasFile="true">
                             <x-form.input-field class="h-9 p-1" type="file" name="image" label="Image"/>
                             <x-form.submit value="Upload" />
@@ -39,8 +40,6 @@
             @endcan
             <x-link href="/comments" class="text-white text-sm font-bold text-center max-md:text-lg hover:bg-white/15 hover:border-white-100 hover:border-4 p-10">Comments</x-link>
         </div>
-
-
     <div>
 
     </div>

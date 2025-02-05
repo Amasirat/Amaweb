@@ -1,16 +1,14 @@
+let toggled = false;
+let hide = "hidden";
 document.addEventListener("DOMContentLoaded", () => {
     let picturebutton = document.getElementById("picture-button");
-
-    let toggled = false;
     picturebutton.onclick = () => {
         let picture_upload = document.getElementById("picture-upload-div");
         if(!toggled)
-            picture_upload.classList.remove("invisible");
+            picture_upload.classList.remove(hide);
         else
-            picture_upload.classList.add("invisible");
+            picture_upload.classList.add(hide);
 
         toggled = !toggled;
     };
-
-
 });

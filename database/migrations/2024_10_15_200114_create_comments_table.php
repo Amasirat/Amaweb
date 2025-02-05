@@ -19,9 +19,10 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->nullable();
             $table->foreignIdFor(Blog::class);
             $table->text("body");
+            // represents the comment being a reply, id of its parent goes here
+            // if null then it is not a reply
             $table->foreignIdFor(Comment::class)->nullable();
             $table->string("guest_name")->nullable();
-            $table->string("email")->nullable();
             $table->timestamps();
         });
     }

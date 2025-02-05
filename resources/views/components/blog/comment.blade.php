@@ -9,15 +9,16 @@
 
 @endphp
 
-<div {{ $attributes->merge(['class' => "bg-white/15 p-5 rounded-xl max-md:m-2"])}}>
+<div {{ $attributes->merge(['class' => "comment-wrapper bg-white/15 p-5 rounded-xl max-md:m-2"])}}>
     <div class="flex flex-row justify-between">
         <div class="w-5/6 h-10 flex flex-row">
             <div class="h-auto w-10">
                 <img class="h-full w-full rounded-3xl" src="{{
-                $comment->user != null ? Vite::asset('/public/storage/'.$comment->user->profile_pic) :
+                $comment->user != null && $comment->user->profile_pic != null ?
+                        Vite::asset('/public/storage/'.$comment->user->profile_pic) :
                         Vite::asset('/resources/images/placeholders/icons8-customer-50.png')
                     }}"
-                    alt="profile_picture">
+                    alt="profile_pic">
             </div>
 
             <div class="text-sm w-1/2 p-2">
@@ -38,7 +39,27 @@
     </div>
 
     <div class="mt-5">
-        {!! MarkDownService::Parse($comment->body) !!}
+        <div class="comment-text">
+            {!! MarkDownService::Parse($comment->body) !!}
+        </div>
+        <div class="edit-comment-box hidden">
+            <x-form.form method="PATCH">
+                <x-blog.textarea name="edited">
+                    {{ $comment->body }}
+                </x-blog.textarea>
+                <x-form.error field="edited" />
+                <textarea class="hidden" name="comment_id">{{ $comment->id }}</textarea>
+                <div class="flex flex-row space-x-3">
+                    <x-form.button class="cancel-edit">Cancel</x-form.button>
+                    <x-form.submit value="Update" />
+                </div>
+            </x-form.form>
+        </div>
     </div>
+    @if($comment->user == Auth::user())
+    <div>
+        <button class="edit-comment text-blue-500 hover:text-blue-200 duration-200">Edit</button>
+    </div>
+    @endif
 </div>
 
