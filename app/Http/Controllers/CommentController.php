@@ -41,7 +41,7 @@ class CommentController extends Controller
         Comment::create($attribute);
         return redirect("/blogs/$blog->id");
     }
-    public function edit(Request $request)
+    public function update(Request $request)
     {
         $validated = $request->validate([
             "edited" => ["required"],

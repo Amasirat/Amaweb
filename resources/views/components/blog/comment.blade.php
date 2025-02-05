@@ -43,7 +43,7 @@
             {!! MarkDownService::Parse($comment->body) !!}
         </div>
         <div class="edit-comment-box hidden">
-            <x-form.form method="PATCH">
+            <x-form.form method="PATCH" action="/comment/edit">
                 <x-blog.textarea name="edited">
                     {{ $comment->body }}
                 </x-blog.textarea>

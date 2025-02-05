@@ -58,7 +58,7 @@ Route::delete('/blogs/{blog}', [BlogController::class, 'destroy'])
 Route::post('/blogs/{blog}', [CommentController::class, 'store'])
     ->name("comment-post");
 
-Route::patch('/blogs/{blog}', [CommentController::class, 'edit'])
+Route::patch('/comment/edit', [CommentController::class, 'update'])
     ->name("comment-edit");
 
 // Auth

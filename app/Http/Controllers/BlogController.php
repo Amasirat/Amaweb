@@ -92,7 +92,7 @@ class BlogController extends Controller
 
         $blog->update($attributes);
 
-        return redirect("/blogs/".$blog->id);
+        return redirect('/blogs/'.$blog->id);
 
     }
     public function destroy(Blog $blog)

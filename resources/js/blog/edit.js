@@ -7,14 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
     modalButton.onclick = () => {
         clicked = !clicked;
         clicked ?
-        modal.classList.remove("invisible") :
-        modal.classList.add("invisible");
+        modal.classList.remove("hidden") :
+        modal.classList.add("hidden");
     };
 
     modalCancelButton.onclick = () => {
         clicked = false;
 
-        modal.classList.add("invisible");
+        modal.classList.add("hidden");
     };
 
 

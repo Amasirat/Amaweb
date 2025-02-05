@@ -21,7 +21,7 @@
 </div>
 
 <div id="delete-modal"
-    class="invisible flex flex-col bg-white/5 shadow-xl
+    class="hidden bg-white/5 shadow-xl
     w-96 h-52 p-6
     rounded-lg relative left-28">
     <div>
