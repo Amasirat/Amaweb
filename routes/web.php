@@ -74,9 +74,14 @@ Route::get('/panel', [UserController::class, 'show'])
     ->name("user-panel")
     ->middleware("auth");
 
-Route::get('/comments', [CommentController::class, 'index'])
+Route::get('/panel/comments', [CommentController::class, 'index'])
     ->name('user-comments')
     ->middleware('auth');
+
+Route::get('/panel/blogs', [SessionController::class, 'get_usr_blogs'])
+    ->name("user-blogs")
+    ->middleware("auth")
+    ->can("create-blog");
 
 Route::patch('/upload-image', [UserController::class, 'edit'])
     ->name("user-edit-image");

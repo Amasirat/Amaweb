@@ -12,5 +12,12 @@
             </div>
             @endforeach
         </div>
+
+        @if(count($comments) == 0)
+            <div class="text-white/30 pt-40 pl-10">
+                You have commented even a <i>single</i> time. Go do some commenting,
+                I'd like your thoughts and feelings.
+            </div>
+        @endif
     </div>
 </x-layout>

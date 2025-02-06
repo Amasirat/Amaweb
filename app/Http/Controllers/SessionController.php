@@ -13,6 +13,13 @@ class SessionController extends Controller
         return view("user.login");
     }
 
+    public function get_usr_blogs()
+    {
+        return view("user.blogs", [
+            "blogs" => Auth::user()->blogs
+        ]);
+    }
+
     public function store(Request $request)
     {
         $attributes = $request->validate([
@@ -20,7 +27,7 @@ class SessionController extends Controller
             "password" => ["required"]
         ]);
 
-        // TODO: Authenticate if username and password is correct
+        // TODO: Do a proper job of handling exception
         if(! Auth::attempt($attributes))
         {
             throw new ValidationException("Failed to login...Were your details correct?");

@@ -43,6 +43,14 @@ class UserController extends Controller
 
         $user = Auth::user();
 
+        if($user->profile_pic != null)
+        {
+            if(file_exists(public_path().'/storage/'.$user->profile_pic))
+            {
+                unlink(public_path().'/storage/'.$user->profile_pic);
+            }
+        }
+
         $imagePath = $attributes["image"]->store('users');
 
         User::where("id", $user->id)->update(array("profile_pic" => $imagePath));
