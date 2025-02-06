@@ -21,9 +21,12 @@
                     alt="profile_pic">
             </div>
 
-            <div class="text-sm w-1/2 p-2">
+            <div class="text-sm w-1/2 p-2 {{ ($comment->user == $comment->blog->user) ? 'text-blue-500' : 'text-white' }}">
                 @if($comment->user != null)
                     {{ $comment->user->username }}
+                    @if($comment->user == $comment->blog->user)
+                        <span class="bg-blue-500 text-white p-1 rounded-lg">OP</span>
+                    @endif
                 @else
                     {{ $comment->guest_name }}
                 @endif

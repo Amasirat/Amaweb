@@ -24,10 +24,6 @@
         </div>
 
         <div class="border-t-2 border-dashed mt-10">
-            @if (count($blog->comments) == 0)
-                <div class="m-14 text-white/50">No Comments! Be the first to comment on this brilliant article!</div>
-            @endif
-
             <div>
                 <x-form.form>
                     @guest

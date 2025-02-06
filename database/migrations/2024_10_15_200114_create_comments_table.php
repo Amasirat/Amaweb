@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(User::class)->nullable();
-            $table->foreignIdFor(Blog::class);
+            $table->foreignIdFor(Blog::class)->constrained()->cascadeOnDelete();
             $table->text("body");
             // represents the comment being a reply, id of its parent goes here
             // if null then it is not a reply
