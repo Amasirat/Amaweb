@@ -1,7 +1,15 @@
-@import "fonts.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'soul-daisy';
+    src: url('/resources/fonts/SoulDaisy.otf');
+}
+
+body {
+    font-family: 'soul-daisy' !important;
+}
 
 h1 {
     @apply font-bold text-9xl;

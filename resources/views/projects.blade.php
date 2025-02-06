@@ -5,8 +5,7 @@
         <div class="border-t-2 flex flex-col space-y-10">
             <x-project :image="Vite::asset('resources/images/projects/website.png')" title="This website" href="/projects" id="amaweb_project">
                 You're looking at this thing! It was an incredible learning experience and taught me my limitations as a
-                software developer. It actually made me realize I have to take learning Javascript seriously. So Off we go!!
-                Hopefully I can develop and improve this webiste given more time and experience. For now, I'm glad I finished this
+                software developer. Hopefully I can develop and improve this webiste given more time and experience. For now, I'm glad I finished this
                 for myself.
             </x-project>
 
@@ -56,29 +55,75 @@
             </x-project>
         </div>
 
-
-
         <h1 class="font-bold text-2xl ml-2">Music</h1>
         <div class="border-t-2 flex flex-col space-y-10">
-            <x-project :image="Vite::asset('resources/images/projects/your-love-is-a-drug.jpg')" title="Your Love is a Drug Cover" href="https://archiveofourown.org/works/59630983/chapters/152087257">
+            <x-project :image="Vite::asset('resources/images/projects/your-love-is-a-drug.jpg')" title="Your Love is a Drug Cover" href="">
+               <p>
                 My first ever cover made in Reaper using synths. Music production is a whole another world of music than doing
                 music with notation softwares. For my first attempt, I believe it went as well as it could.
+                </p>
+
+                <p>
+                    It's a song from a video game called VA-11 Hall-A, (pronounced Vallhala which realized a bit too late).
+                    I found this game through going through spotify recommendations. The music was something really interesting,
+                    it strikes a tone that I rarely hear but absolutely adore. That was why this project was an absolute dream.
+                </p>
             </x-project>
 
-            <x-project :image="Vite::asset('resources/images/projects/requiem of silence.jpg')" title="Requiem of Silence" href="https://archiveofourown.org/works/59630983/chapters/152087257">
+            <x-project :image="Vite::asset('resources/images/projects/requiem of silence.jpg')" title="Requiem of Silence" href="">
                 My first ever completed transcribtion from ear. Requiem of Silence is a simple but yet devestatingly beautiful
                 piece of music. Because it was simple, I felt I could try my hand at transcribing the parts.
                 It was still incredibly difficult but it was yet another stepping stone for my improvement as a musician and composer.
                 It helps a lot that it became pretty popular! I wish my other more polished later works would get more love too...
             </x-project>
+
+            <x-project :image="Vite::asset('resources/images/projects/achildsDreamcover.png')" title="Inside my Dream" href="https://archiveofourown.org/works/59630983/chapters/152087257">
+            <p>One summer week, I decided to participate in a composing gamejam thing.
+                The idea was that a theme was given, and based on that theme (either a word or an art piece)
+                you had to think up an imaginary game and compose its soundtrack. I decided to pick the art piece.
+                In the art piece, a particular element that stood out to me was a figure the child was holding onto.
+                It seemed like she was her mother or a guardian of sorts. I got intrigued and thought "What if this art piece was actually a child's fantasy, where they can see their lost guardian?"
+                That idea intrigued me, I thought about a game where at the end you'll realize the entire game was a lie. The thesis of the game would be about facing reality.
+                However to be able to land that theme, the initial lie had to be convincing, therefore I wrote a completely whimsical main theme.
+                The theme heavily relied on progressions from major to major, especially the IV to V, etc.
+                My intention was for this theme to eventually morph and change throughout
+                the score and be infused with more complex harmony reflecting the change that would occur. The game would in other words be about maturing
+                and realizing that you have to move on and not be stuck in your happy thoughts forever.
+                Do not be happy in ignorance, be happy despite the knowledge, that is something I really believe in.</p>
+
+                <p>
+                    In any case, I only had a week so I could only score the beginning, or the "lie" let's say,
+                    It was not ranked that highly, only in the 100s or so however I think in hindsight I am satisfied with
+                    what I achieved despite the problems I had with what I came up with. Let me spare you of all the details of why that is.
+
+                    Also yes, the cover was drawn by myself, I'm sure you noticed the amatuerish look of that thing right?
+                </p>
+            </x-project>
+
+            <x-project :image="Vite::asset('resources/images/projects/original_pieces.png')" title="My Other Original Music" href="https://youtube.com/@amasirat?si=pI9tV6i1lDtryUsE">
+            A playlist of original pieces of music, this list would be long if I had listed them all.
+            </x-project>
+
         </div>
 
 
         <h1 class="font-bold text-2xl ml-2">Writing</h1>
         <div class="border-t-2">
             <x-project title="Second Awakening" href="https://archiveofourown.org/works/59630983/chapters/152087257">
-                This story is what you would call fanfiction! It's a result of my over-ambitious mind and a dream! It's incredibly slow to update
-                but once it does...well nothing happens. A new chapter releases. What did you expect?
+                <p>
+                    This story is what you would call fanfiction! It's a result of my over-ambitious mind
+                    and a dream! It's incredibly slow to update
+                    but once it does...well nothing happens. A new chapter releases. What did you expect?
+                </p>
+
+                <p>
+                    The goal was to write a story with a similar world of Tensura,
+                    however the tone of the story would be different. The world-building will be done in the way
+                    that I want to read. It basically serves two purposes. 1.Practice and learn the creative craft of writing
+                    2.Write a version of Tensura I would have enjoyed reading.
+                    You can only check it out and see for yourself! I have no illusion it'll be any better than the original however
+                    I've realized you should sometimes just take a leap and do it.
+                </p>
             </x-project>
         </div>
     </div>
