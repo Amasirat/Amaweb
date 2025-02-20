@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="flex flex-col">
+<html lang="en" class="flex flex-col w-screen">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config('app.name', 'Laravel') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-background text-white min-h-screen flex flex-col">
+<body class="bg-background text-white min-h-screen w-screen flex flex-col">
 
     <div class="mb-5 items-center flex flex-row">
         <div class="w-1/2">

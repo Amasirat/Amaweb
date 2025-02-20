@@ -37,6 +37,13 @@ class CommentController extends Controller
             $attribute= array_merge($attribute, ["blog_id" => $blog->id,
                 "user_id" => $request->user() != null ? $request->user()->id : null]);
         }
+        // If comment is a reply
+        if($request["comment_id"] != null)
+        {
+            $attribute = array_merge($attribute, [
+                "comment_id" => $request["comment_id"]
+            ]);
+        }
         // Store in table
         Comment::create($attribute);
         return redirect("/blogs/$blog->id");

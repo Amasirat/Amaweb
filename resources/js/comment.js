@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
             textBox.classList.add('hidden');
         });
     });
-
+    // Handling canceling editing
     document.querySelectorAll('.cancel-edit').forEach(cancelButton => {
         cancelButton.addEventListener("click", () => {
             const commentWrapper = cancelButton.closest('.comment-wrapper');
@@ -20,5 +20,23 @@ document.addEventListener("DOMContentLoaded", function () {
             commentWrapper.querySelector(".comment-text").classList.remove(hide);
             commentWrapper.querySelector(".edit-comment-box").classList.add(hide);
         });
+    });
+
+    document.querySelectorAll('.reply-button').forEach(replyButton => {
+        const commentWrapper = replyButton.closest('.comment-wrapper');
+        const cancelReplyButton = commentWrapper.querySelector(".reply-cancel");
+        const replyForm = commentWrapper.querySelector(".reply-form");
+
+        replyButton.addEventListener("click", () => {
+            replyButton.classList.add(hide);
+            replyForm.classList.remove(hide);
+        });
+
+        cancelReplyButton.addEventListener("click", () => {
+            replyButton.classList.remove(hide);
+            replyForm.classList.add(hide);
+
+        });
+
     });
 });

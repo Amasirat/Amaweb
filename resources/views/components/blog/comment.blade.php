@@ -59,10 +59,27 @@
             </x-form.form>
         </div>
     </div>
+
+    <div class="mt-2 space-x-2">
+    <x-form.button class="reply-button">Reply</x-form.button>
     @if($comment->user == Auth::user())
-    <div>
         <button class="edit-comment text-blue-500 hover:text-blue-200 duration-200">Edit</button>
-    </div>
     @endif
+    </div>
+
+    <div class="reply-form hidden bg-white/15 rounded-xl mt-2">
+        <x-form.form>
+        @guest
+            <x-form.input-field label="guest_name"/>
+        @endguest
+
+            <x-blog.textarea name="body"/>
+            <input name="comment_id" type="number" class="hidden" value="{{ $comment->id }}" />
+            <div>
+                <x-form.button class="reply-cancel">Cancel</x-form.button>
+                <x-form.submit value="Reply" />
+            </div>
+        </x-form.form>
+    </div>
 </div>
 
