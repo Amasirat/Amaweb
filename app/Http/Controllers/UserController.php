@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Password;
+use Illuminate\Auth\Events\Registered;
 use App\Models\User;
 
 class UserController extends Controller
@@ -32,7 +33,9 @@ class UserController extends Controller
 
         Auth::login($user);
 
-        return redirect("/");
+        event(new Registered($user));
+
+        return redirect("/email/verify");
     }
 
     public function edit(Request $request)

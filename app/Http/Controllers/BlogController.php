@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\BlogPosted;
 use App\Models\Blog;
 use Illuminate\Validation\Rules\File as FileRule;
 use Illuminate\Http\File;
@@ -11,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Filament\Forms\Components\MarkdownEditor;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\MailService;
 
 class BlogController extends Controller
 {
@@ -68,6 +70,7 @@ class BlogController extends Controller
             "user_id" => $user->id,
             "image" => $imagePath
         ]);
+        MailService::SendBulkEmail();
 
         return redirect("/blogs");
     }

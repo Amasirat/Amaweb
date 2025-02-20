@@ -7,7 +7,15 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CommentController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
+Route::get("/test", function() {
+    \Illuminate\Support\Facades\Mail::to("amir.basirat.2004@gmail.com")->queue(
+        new \App\Mail\BlogPosted()
+    );
+
+    return "Done";
+});
 // Generic Views
 Route::get('/', function () {
 
@@ -70,6 +78,16 @@ Route::get('/login', [SessionController::class, "index"])
     ->name("user-login")
     ->middleware("guest");
 
+Route::get('/email/verify', function () {
+    return view('user.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/panel');
+
+})->middleware(['auth', 'signed'])->name('verification.verify');
 Route::get('/panel', [UserController::class, 'show'])
     ->name("user-panel")
     ->middleware("auth");
