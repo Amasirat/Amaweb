@@ -25,7 +25,7 @@
                 @if($comment->user != null)
                     {{ $comment->user->username }}
                     @if($comment->user == $comment->blog->user)
-                        <span class="bg-blue-500 text-white p-1 rounded-lg">OP</span>
+                        <span class="bg-blue-500 text-white p-1 rounded-lg">Author</span>
                     @endif
                 @else
                     {{ $comment->guest_name }}
