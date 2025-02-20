@@ -43,6 +43,11 @@ class CommentController extends Controller
             $attribute = array_merge($attribute, [
                 "comment_id" => $request["comment_id"]
             ]);
+            $parent_comment = Comment::findOrFail($attribute["comment_id"]);
+            $parent_name = $parent_comment->user != null ? $parent_comment->user->username : $parent_comment->guest_name;
+
+            $new_body = "[@".$parent_name."](#) ".$attribute["body"];
+            $attribute["body"] = $new_body;
         }
         // Store in table
         Comment::create($attribute);
