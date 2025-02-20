@@ -26,10 +26,6 @@
                 </p>
 
                 <p>
-                    Speaking of which, you can find my resume <a href="storage/Resume.pdf">here</a>.
-                </p>
-
-                <p>
                     As for who I am, Hi, I am Amirhossein, The name's hard to pronounce so I go with Amasirat online.
                     I do many things but I am a programmer/Computer Scientist, if you'd like to box me into
                     a singular social identity. That's what I'm studying at university so I suppose that's fair!

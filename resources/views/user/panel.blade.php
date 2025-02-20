@@ -12,7 +12,14 @@
 
             <div class="p-6 max-sm:p-0 flex flex-col space-y-3">
                 <span class="font-bold text-xl">{{ ucfirst($user->username) }}</span>
+                @if($user->email_verified_at != null)
                 <span class="text-sm">{{ $user->email }}</span>
+                @else
+                <span class="text-sm">Your email is not verified.</span>
+                <x-form.form action="/email/verification-notification">
+                    <button class="text-blue-500 hover:text-blue-200 duration-100" type="submit">Send new email verification</button>
+                </x-form.form>
+                @endif
                 <div>
                     <x-form.button id="picture-button">Edit Picture</x-form.button>
                     <div class="bg-black/60 rounded-lg absolute hidden" id="picture-upload-div">

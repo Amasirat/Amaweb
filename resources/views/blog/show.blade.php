@@ -16,7 +16,6 @@
                 @endcan
             </div>
         </div>
-
         <div class="border-t-2 mt-5 p-10 text-md">
 
             {!! $blog->body !!}

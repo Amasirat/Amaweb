@@ -70,7 +70,6 @@ class BlogController extends Controller
             "user_id" => $user->id,
             "image" => $imagePath
         ]);
-        MailService::SendBulkEmail();
 
         return redirect("/blogs");
     }
