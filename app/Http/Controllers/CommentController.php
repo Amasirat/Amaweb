@@ -40,7 +40,9 @@ class CommentController extends Controller
             ]);
             $attribute= array_merge($attribute, ["blog_id" => $blog->id,
                 "user_id" => $request->user() != null ? $request->user()->id : null]);
+                        // Store in table
         }
+
         // If comment is a reply
         if($request["comment_id"] != null)
         {
@@ -54,15 +56,14 @@ class CommentController extends Controller
 
             $new_body = "[@".$parent_name."](#) ".$attribute["body"];
             $attribute["body"] = $new_body;
-
-            // queue email to the parent comment (if applicable and verified)
             if($parent_comment->user != null && $parent_comment->user->email_verified_at != null)
-                Mail::to($parent_comment->user)->queue(
-                    new ReplyPosted()
-                );
+            // queue email to the parent comment (if applicable and verified)
+            Mail::to($parent_comment->user)->queue(
+                new ReplyPosted()
+            );
         }
-        // Store in table
-        $comment = Comment::create($attribute);
+        Comment::create($attribute);
+
         return redirect("/blogs/$blog->id");
     }
     public function update(Request $request)

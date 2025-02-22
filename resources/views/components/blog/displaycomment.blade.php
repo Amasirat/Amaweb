@@ -1,4 +1,4 @@
-@props(["comments" => null, "max_recursive_margin" => 2])
+@props(["comments" => null, "max_recursive_margin" => 6])
 @php
     if($comments == null)
         throw new InvalidArgumentException("Comment list was null, could not display comments");

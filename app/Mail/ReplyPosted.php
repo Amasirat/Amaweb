@@ -8,6 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Comment;
 
 class ReplyPosted extends Mailable
 {
@@ -18,7 +19,6 @@ class ReplyPosted extends Mailable
      */
     public function __construct()
     {
-        //
     }
 
     /**
@@ -37,10 +37,9 @@ class ReplyPosted extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'mail.reply-posted',
+            view: 'mail.reply-posted',
         );
     }
-
     /**
      * Get the attachments for the message.
      *

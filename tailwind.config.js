@@ -11,4 +11,12 @@ export default {
         },
     },
   },
+  safelist: [
+    'ml-8',
+    'ml-16',
+    'ml-24',
+    'ml-32',
+    'ml-40',
+    'ml-48',
+  ],
 };

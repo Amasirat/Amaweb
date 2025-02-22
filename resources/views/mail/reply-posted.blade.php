@@ -1,12 +1,5 @@
-<x-mail::message>
-# Introduction
+<div class="bg-background">
+    <h3>Someone replied to your comment!</h3>
 
-The body of your message.
-
-<x-mail::button :url="''">
-Button Text
-</x-mail::button>
-
-Thanks,<br>
-{{ config('app.name') }}
-</x-mail::message>
+    <x-blog.comment :comment="$comment" />
+</div>

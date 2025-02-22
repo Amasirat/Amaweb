@@ -6,7 +6,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-background text-white min-h-screen w-screen flex flex-col">
+<body class="bg-background text-white min-h-screen w-screen flex flex-col overflow-x-hidden">
 
     <div class="mb-5 items-center flex flex-row">
         <div class="w-1/2">
