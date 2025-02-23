@@ -41,7 +41,21 @@
         </div>
     </div>
 
-        <div class="bg-white/5 mt-6 flex flex-col w-1/5 rounded-lg h-auto duration-300 max-md:w-full">
+    <div class="flex flex-row justify-start m-0">
+        <x-form.form method="PATCH" action="/panel/notify_status">
+            <!-- The value in the hidden input, gives the opposite of the current notify value,
+             that way it will only be a matter of updating the database -->
+            <input type="hidden" value="{{ $user->notify ? '0' : '1' }}" name="notify">
+            <button
+                class="{{ $user->notify == "1" ?
+                'hover:bg-red-500 hover:text-white text-red-500' :
+                'hover:bg-green-500 hover:text-white text-green-500' }}
+
+                bg-white/30 p-3 rounded-lg duration-300" type="submit">{{ $user->notify ? "Disable " : "Enable" }} Email Notifications</button>
+        </x-form.form>
+    </div>
+
+        <div class="bg-white/5 mt-3 flex flex-col w-1/5 rounded-lg h-auto duration-300 max-md:w-full">
             @can("create-blog")
             <x-link href="/create" class="text-white text-sm font-bold text-center max-md:text-lg hover:bg-white/15 hover:border-white-100 hover:border-4 p-10">Create Blogs</x-link>
             <x-link href="/panel/blogs" class="text-white text-sm font-bold text-center max-md:text-lg hover:bg-white/15 hover:border-white-100 hover:border-4 p-10">See Blogs</x-link>

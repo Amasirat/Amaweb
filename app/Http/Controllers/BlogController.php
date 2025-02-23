@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Filament\Forms\Components\MarkdownEditor;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Jobs\SendBlogBulkUserMail;
 use App\MailService;
 
 class BlogController extends Controller
@@ -70,6 +71,8 @@ class BlogController extends Controller
             "user_id" => $user->id,
             "image" => $imagePath
         ]);
+
+        SendBlogBulkUserMail::dispatch();
 
         return redirect("/blogs");
     }

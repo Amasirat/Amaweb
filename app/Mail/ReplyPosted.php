@@ -3,7 +3,6 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
@@ -17,9 +16,8 @@ class ReplyPosted extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(Blog $blog)
+    public function __construct()
     {
-        $this->blog = $blog;
     }
 
     /**
@@ -39,9 +37,6 @@ class ReplyPosted extends Mailable
     {
         return new Content(
             markdown: 'mail.reply-posted',
-            with: [
-                "url" => url('/blogs/'.$this->blog->id)
-            ]
         );
     }
     /**
@@ -53,6 +48,4 @@ class ReplyPosted extends Mailable
     {
         return [];
     }
-
-    protected $blog;
 }

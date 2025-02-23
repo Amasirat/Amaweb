@@ -3,7 +3,7 @@
 
 How exciting! Let's go check it out!
 
-<x-mail::button :url="$url">
+<x-mail::button :url="url('/blogs')">
 Let's go!
 </x-mail::button>
 

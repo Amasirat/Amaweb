@@ -38,7 +38,7 @@ class BlogPosted extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.blog-posted',
+            markdown: 'mail.blog-posted',
         );
     }
 

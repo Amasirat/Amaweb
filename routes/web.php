@@ -109,7 +109,12 @@ Route::get('/panel/blogs', [SessionController::class, 'get_usr_blogs'])
     ->can("create-blog");
 
 Route::patch('/upload-image', [UserController::class, 'edit'])
+    ->middleware("auth")
     ->name("user-edit-image");
+
+Route::patch('/panel/notify_status', [UserController::class, 'edit_notify_status'])
+    ->middleware("auth")
+    ->name("user-edit-notify-status");
 
 Route::delete('/logout', [SessionController::class, 'destroy'])
     ->name("delete-session");

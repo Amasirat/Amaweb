@@ -60,8 +60,17 @@ class UserController extends Controller
 
         return redirect("/panel");
     }
-    public function destroy(User $user)
+
+    public function edit_notify_status(Request $request)
     {
-        // TODO
+        $notfiy_value = false;
+        if($request["notify"] == "1")
+        {
+            $notfiy_value = true;
+        }
+
+        User::find(Auth::user()->id)->update(["notify" => $notfiy_value]);
+
+        return redirect()->back();
     }
 }
