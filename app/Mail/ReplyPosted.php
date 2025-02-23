@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-use App\Models\Comment;
+use App\Models\Blog;
 
 class ReplyPosted extends Mailable
 {
@@ -17,8 +17,9 @@ class ReplyPosted extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(Blog $blog)
     {
+        $this->blog = $blog;
     }
 
     /**
@@ -37,7 +38,10 @@ class ReplyPosted extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.reply-posted',
+            markdown: 'mail.reply-posted',
+            with: [
+                "url" => url('/blogs/'.$this->blog->id)
+            ]
         );
     }
     /**
@@ -49,4 +53,6 @@ class ReplyPosted extends Mailable
     {
         return [];
     }
+
+    protected $blog;
 }

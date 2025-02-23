@@ -59,7 +59,7 @@ class CommentController extends Controller
             if($parent_comment->user != null && $parent_comment->user->email_verified_at != null)
             // queue email to the parent comment (if applicable and verified)
             Mail::to($parent_comment->user)->queue(
-                new ReplyPosted()
+                new ReplyPosted($blog)
             );
         }
         Comment::create($attribute);
