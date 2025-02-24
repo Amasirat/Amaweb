@@ -10,13 +10,6 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CommentController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
-Route::get("/test", function() {
-    \Illuminate\Support\Facades\Mail::to("amir.basirat.2004@gmail.com")->queue(
-        new \App\Mail\BlogPosted()
-    );
-
-    return "Done";
-});
 // Generic Views
 Route::get('/', function () {
 
