@@ -27,10 +27,11 @@ class SessionController extends Controller
             "password" => ["required"]
         ]);
 
-        // TODO: Do a proper job of handling exception
         if(! Auth::attempt($attributes))
         {
-            throw new ValidationException("Failed to login...Were your details correct?");
+            return redirect()->back()->withErrors([
+                'password' => 'Wrong password, are you sure this is it?',
+            ]);
         }
 
         request()->session()->regenerate();

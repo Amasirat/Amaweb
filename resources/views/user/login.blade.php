@@ -7,6 +7,5 @@
 
         <x-form.submit value="Login" />
         <x-link href="/register">Do you want to register?</x-link>
-        <x-link href="">Forgot Password?</x-link>
     </x-form.form>
 </x-layout>
