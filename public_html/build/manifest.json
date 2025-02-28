@@ -1,0 +1,17 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-yRwCvHOG.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/fonts/SoulDaisy.otf": {
+    "file": "assets/SoulDaisy-uWGgYO_V.otf",
+    "src": "resources/fonts/SoulDaisy.otf"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-Xaw6OIO1.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
