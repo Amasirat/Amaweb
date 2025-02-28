@@ -12,8 +12,6 @@
         "vite": "^5.0"
     },
     "dependencies": {
-        "@toast-ui/editor": "^3.2.2",
-        "@wysimark/standalone": "^3.0.20",
         "autoprefixer": "^10.4.20",
         "axios": "^1.7.9"
     }

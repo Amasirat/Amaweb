@@ -2,7 +2,7 @@
 <x-layout>
     <section class="flex flex-row max-md:flex-col">
         <div class="w-1/2 max-md:min-w-full content-center">
-            <a href="/about"><img class="hover:border-8 hover:p-0 duration-300 cursor-pointer w-62 h-70 p-6" alt="main-image" src="{{ Vite::asset('/resources/images/homepage/portrait.jpg') }}"></a>
+            <a href="/about"><img class="hover:border-8 hover:p-0 duration-300 cursor-pointer w-62 h-70 p-6" alt="main-image" src="{{ Vite::asset('resources/images/homepage/portrait.jpg') }}"></a>
         </div>
         <div class="w-1/2 max-md:min-w-full">
             <div class="bg-white/10 px-5 py-3 m-4 min-h-full rounded-xl">

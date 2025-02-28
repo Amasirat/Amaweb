@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-yRwCvHOG.css",
+    "file": "assets/app-BmHXEbXl.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -8,10 +8,100 @@
     "file": "assets/SoulDaisy-uWGgYO_V.otf",
     "src": "resources/fonts/SoulDaisy.otf"
   },
+  "resources/images/homepage/portrait.jpg": {
+    "file": "assets/portrait-D3ZSKmR1.jpg",
+    "src": "resources/images/homepage/portrait.jpg"
+  },
+  "resources/images/icons/bluesky-icon.svg": {
+    "file": "assets/bluesky-icon-DnIN9GAi.svg",
+    "src": "resources/images/icons/bluesky-icon.svg"
+  },
+  "resources/images/icons/github-icon.svg": {
+    "file": "assets/github-icon-D1MP-Mww.svg",
+    "src": "resources/images/icons/github-icon.svg"
+  },
+  "resources/images/icons/ig-instagram-icon.svg": {
+    "file": "assets/ig-instagram-icon-BzVwFZKR.svg",
+    "src": "resources/images/icons/ig-instagram-icon.svg"
+  },
+  "resources/images/icons/linkedin-app-icon.svg": {
+    "file": "assets/linkedin-app-icon-jg9icmbW.svg",
+    "src": "resources/images/icons/linkedin-app-icon.svg"
+  },
+  "resources/images/icons/youtube-color-icon.svg": {
+    "file": "assets/youtube-color-icon-i0tfTYub.svg",
+    "src": "resources/images/icons/youtube-color-icon.svg"
+  },
+  "resources/images/placeholders/city.jpg": {
+    "file": "assets/city-qHxESfm7.jpg",
+    "src": "resources/images/placeholders/city.jpg"
+  },
+  "resources/images/placeholders/evening_anime1.jpg": {
+    "file": "assets/evening_anime1-KP11UTcV.jpg",
+    "src": "resources/images/placeholders/evening_anime1.jpg"
+  },
+  "resources/images/placeholders/icons8-customer-50.png": {
+    "file": "assets/icons8-customer-50-eDJ9QSf-.png",
+    "src": "resources/images/placeholders/icons8-customer-50.png"
+  },
+  "resources/images/projects/PongClone.png": {
+    "file": "assets/PongClone-CGfnADe_.png",
+    "src": "resources/images/projects/PongClone.png"
+  },
+  "resources/images/projects/achildsDreamcover.png": {
+    "file": "assets/achildsDreamcover-BvwN7V4s.png",
+    "src": "resources/images/projects/achildsDreamcover.png"
+  },
+  "resources/images/projects/darkened.png": {
+    "file": "assets/darkened-Bv6IenfB.png",
+    "src": "resources/images/projects/darkened.png"
+  },
+  "resources/images/projects/nandtree.png": {
+    "file": "assets/nandtree-D0Zbl3Ta.png",
+    "src": "resources/images/projects/nandtree.png"
+  },
+  "resources/images/projects/original_pieces.png": {
+    "file": "assets/original_pieces-C5YHbzyP.png",
+    "src": "resources/images/projects/original_pieces.png"
+  },
+  "resources/images/projects/randimania.png": {
+    "file": "assets/randimania-dYdOrvaH.png",
+    "src": "resources/images/projects/randimania.png"
+  },
+  "resources/images/projects/requiem of silence.jpg": {
+    "file": "assets/requiem of silence-j5SQspud.jpg",
+    "src": "resources/images/projects/requiem of silence.jpg"
+  },
+  "resources/images/projects/website.png": {
+    "file": "assets/website-BvM63P2G.png",
+    "src": "resources/images/projects/website.png"
+  },
+  "resources/images/projects/your-love-is-a-drug.jpg": {
+    "file": "assets/your-love-is-a-drug-GTLvDN0a.jpg",
+    "src": "resources/images/projects/your-love-is-a-drug.jpg"
+  },
   "resources/js/app.js": {
     "file": "assets/app-Xaw6OIO1.js",
     "name": "app",
     "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/comment.js": {
+    "file": "assets/comment-BVxhFnPi.js",
+    "name": "comment",
+    "src": "resources/js/comment.js",
+    "isEntry": true
+  },
+  "resources/js/panel.js": {
+    "file": "assets/panel-DnHshRpL.js",
+    "name": "panel",
+    "src": "resources/js/panel.js",
+    "isEntry": true
+  },
+  "resources/js/scroll.js": {
+    "file": "assets/scroll-CPg7yuhs.js",
+    "name": "scroll",
+    "src": "resources/js/scroll.js",
     "isEntry": true
   }
 }

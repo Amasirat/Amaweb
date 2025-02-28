@@ -27,7 +27,7 @@
                             <img id="profile-icon" class="max-md:mx-0 max-md:w-10 rounded-3xl mx-5 cursor-pointer w-8 h-8" src="{{
                         (Auth::user()->profile_pic != null) ?
                         Vite::asset('/public/storage/'.Auth::user()->profile_pic) :
-                        Vite::asset('/resources/images/placeholders/icons8-customer-50.png') }}">
+                        Vite::asset('resources/images/placeholders/icons8-customer-50.png') }}">
                         </a>
                     @endauth
                 </div>

@@ -1,0 +1,1 @@
+let e=!1,d="hidden";document.addEventListener("DOMContentLoaded",()=>{let l=document.getElementById("picture-button");l.onclick=()=>{let t=document.getElementById("picture-upload-div");e?t.classList.add(d):t.classList.remove(d),e=!e}});

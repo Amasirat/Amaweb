@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Vite;
 use App\Models\User;
 use App\Models\Comment;
 use App\Models\Blog;
@@ -38,5 +39,7 @@ class AppServiceProvider extends ServiceProvider
             return $comment->user != null && ($comment->user() == $user);
             // null check is for comments that are guest comments and belong to no user
         });
+
+        Vite::prefetch(concurrency: 3);
     }
 }

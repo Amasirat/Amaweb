@@ -5,7 +5,13 @@ export default defineConfig({
     plugins: [
         laravel({
             publicDirectory: 'public_html',
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: [
+                'resources/css/app.css',
+                'resources/js/app.js',
+                'resources/js/scroll.js',
+                'resources/js/comment.js',
+                'resources/js/panel.js',
+            ],
             refresh: true,
         }),
     ],
