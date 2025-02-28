@@ -40,7 +40,7 @@
             </form>
         </div>
     </div>
-
+    @if($user->email_verified_at != null)
     <div class="flex flex-row justify-start m-0">
         <x-form.form method="PATCH" action="/panel/notify_status">
             <!-- The value in the hidden input, gives the opposite of the current notify value,
@@ -54,6 +54,7 @@
                 bg-white/30 p-3 rounded-lg duration-300" type="submit">{{ $user->notify ? "Disable " : "Enable" }} Email Notifications</button>
         </x-form.form>
     </div>
+    @endif
 
         <div class="bg-white/5 mt-3 flex flex-col w-1/5 rounded-lg h-auto duration-300 max-md:w-full">
             @can("create-blog")
