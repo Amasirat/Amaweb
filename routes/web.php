@@ -39,7 +39,7 @@ Route::get('/blogs/{blog}', [BlogController::class, 'show'])
 Route::get('/create', [BlogController::class, 'create'])
     ->name("blog-create-view")
     ->middleware("auth")
-    ->can("blog-create");
+    ->can("create-blog");
 
 Route::get('/blogs/{blog}/edit', [BlogController::class, 'edit'])
     ->name("blog-edit-view")
