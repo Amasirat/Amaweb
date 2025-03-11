@@ -8,7 +8,6 @@ use App\MarkDownService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Jobs\SendBlogBulkUserMail;
-use App\MailService;
 
 class BlogController extends Controller
 {
