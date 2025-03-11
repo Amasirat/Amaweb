@@ -11,6 +11,7 @@ export default defineConfig({
                 'resources/js/scroll.js',
                 'resources/js/comment.js',
                 'resources/js/panel.js',
+                'resources/js/edit.js',
             ],
             refresh: true,
         }),

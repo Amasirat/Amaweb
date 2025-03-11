@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use App\Models\Blog;
 use App\Models\Comment;
+use App\Models\Draft;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +19,6 @@ class DatabaseSeeder extends Seeder
         User::factory(10)->create();
         Blog::factory(10)->create();
         Comment::factory(10)->create();
+        Draft::factory(3)->create();
     }
 }

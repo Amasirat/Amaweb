@@ -1,8 +1,14 @@
+@php
+    $blogImage = $blog->image != null ? url($blog->image) :
+        'https://unsplash.it/1280/720?image='.(($blog->id <= 1084) ?
+            $blog->id :
+            "https://placehold.co/1280x720");
+@endphp
 <x-layout>
     <div class="flex flex-col">
         <div class="mt-5">
             <div class="w-auto">
-                <img class="max-md:w-full w-10/12" src="{{ url($blog->image) }}">
+                <img class="max-md:w-full w-10/12" src="{{ $blog->image() }}">
             </div>
             <div class="mt-5 text-2xl font-bold ml-5">{{ $blog->title }}</div>
 

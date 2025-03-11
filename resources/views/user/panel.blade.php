@@ -60,6 +60,7 @@
             @can("create-blog")
             <x-link href="/create" class="text-white text-sm font-bold text-center max-md:text-lg hover:bg-white/15 hover:border-white-100 hover:border-4 p-10">Create Blogs</x-link>
             <x-link href="/panel/blogs" class="text-white text-sm font-bold text-center max-md:text-lg hover:bg-white/15 hover:border-white-100 hover:border-4 p-10">See Blogs</x-link>
+            <x-link href="/panel/drafts" class="text-white text-sm font-bold text-center max-md:text-lg hover:bg-white/15 hover:border-white-100 hover:border-4 p-10">Drafts</x-link>
             @endcan
             <x-link href="/panel/comments" class="text-white text-sm font-bold text-center max-md:text-lg hover:bg-white/15 hover:border-white-100 hover:border-4 p-10">Comments</x-link>
         </div>

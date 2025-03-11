@@ -1,8 +1,8 @@
 <x-layout>
     <div class="h-auto flex flex-col space-y-10 p-14 max-md:p-0">
 
-    <h1 class="font-bold text-2xl ml-2">Programming</h1>
-        <div class="border-t-2 flex flex-col space-y-10">
+    <x-title>Programming</x-title>
+        <div class="flex flex-col space-y-10">
             <x-project :image="Vite::asset('resources/images/projects/website.png')" title="This website" href="/projects" id="amaweb_project">
                 You're looking at this thing! It was an incredible learning experience and taught me my limitations as a
                 software developer. Hopefully I can develop and improve this webiste given more time and experience. For now, I'm glad I finished this
@@ -55,8 +55,8 @@
             </x-project>
         </div>
 
-        <h1 class="font-bold text-2xl ml-2">Music</h1>
-        <div class="border-t-2 flex flex-col space-y-10">
+        <x-title>Music</x-title>
+        <div class="flex flex-col space-y-10">
             <x-project :image="Vite::asset('resources/images/projects/your-love-is-a-drug.jpg')" title="Your Love is a Drug Cover" href="">
                <p>
                 My first ever cover made in Reaper using synths. Music production is a whole another world of music than doing
@@ -106,9 +106,8 @@
 
         </div>
 
-
-        <h1 class="font-bold text-2xl ml-2">Writing</h1>
-        <div class="border-t-2">
+        <x-title>Writing</x-title>
+        <div class="flex flex-col space-y-10">
             <x-project title="Second Awakening" href="https://archiveofourown.org/works/59630983/chapters/152087257">
                 <p>
                     This story is what you would call fanfiction! It's a result of my over-ambitious mind

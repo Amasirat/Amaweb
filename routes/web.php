@@ -8,6 +8,7 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\DraftController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 // Generic Views
@@ -48,7 +49,7 @@ Route::get('/blogs/{blog}/edit', [BlogController::class, 'edit'])
 Route::get('/search', [BlogController::class, 'search'])
     ->name("blog-search");
 
-Route::post('/create', [BlogController::class, 'store'])
+Route::post('/blog/create', [BlogController::class, 'store'])
     ->name("blog-post");
 
 Route::patch('/blogs/{blog}', [BlogController::class, 'update'])
@@ -117,3 +118,24 @@ Route::post('/register', [UserController::class, 'store'])
 
 Route::post('/login', [SessionController::class, 'store'])
     ->name("session-post");
+
+// Drafts
+Route::get('/panel/drafts', [DraftController::class, 'index'])
+    ->middleware('auth')
+    ->name('draft-index');
+
+Route::get('/panel/drafts/{draft}', [DraftController::class, 'edit'])
+    ->middleware('auth')
+    ->name('draft-view-edit');
+
+Route::patch('panel/drafts/{draft}', [DraftController::class, "update"])
+    ->middleware('auth')
+    ->name("draft-edit");
+
+Route::delete('/panel/drafts/{draft}', [DraftController::class, "destroy"])
+    ->middleware('auth')
+    ->name("draft-delete");
+
+Route::post("/draft/create", [DraftController::class, "store"])
+    ->middleware("auth")
+    ->name("draft-create");

@@ -4,23 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Comment;
 
-class Blog extends Model
+class Draft extends Model
 {
+    /** @use HasFactory<\Database\Factories\DraftFactory> */
     use HasFactory;
 
     protected $guarded = [];
-
-    // count of unique placeholders
-    protected $placeholder_limit = 1084;
-
-    public static $featured_count = 10;
-
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
-    }
 
     public function user() {
         return $this->belongsTo(User::class);

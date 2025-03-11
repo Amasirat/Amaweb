@@ -2,6 +2,7 @@
 <div class="flex flex-col mt-10">
         <x-blog.search />
 
+        <x-title class="mb-10">Search Results: {{ count($blogs) }}</x-title>
         <div class="w-11/12 max-md:w-full max-md:p-0 flex flex-col space-y-6">
 
             @if (count($blogs) == 0)
@@ -12,7 +13,7 @@
             </div>
             @endif
             @foreach($blogs as $blog)
-                <x-blog.wide-article :blog="$blog" class="w-3/4" />
+                <x-blog.wide-article :item="$blog" class="w-3/4" />
             @endforeach
         </div>
 

@@ -5,7 +5,7 @@
     "width" => "default"
 ])
 @php
-    $class = "pb-8 m-15 flex flex-col flex-wrap justify-between space-y-6 space-x-2 px-5";
+    $class = "pb-8 flex flex-col flex-wrap justify-between space-y-6 space-x-2 px-5";
     // for acommodating methods such as patch or delete
     $isextra = false;
     if($method != "POST" && $method != "GET")

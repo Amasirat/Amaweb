@@ -25,7 +25,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    'env' => env('APP_ENV', 'local'),
 
     /*
     |--------------------------------------------------------------------------
@@ -129,4 +129,6 @@ return [
         'Auth' => Illuminate\Support\Facades\Auth::class
     ])->toArray(),
 
+    'placeholder_limit' => env((int)"APP_PLACEHOLDER_LIMIT", 1084),
+    'title_limit' => env((int)"APP_TITLE_LIMIT", 33),
 ];

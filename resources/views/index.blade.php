@@ -44,9 +44,9 @@
 
 
     <section class="space-y-2">
-        <h1 class="font-bold text-2xl pl-4">Featured</h1>
+        <x-title size="medium">Featured</x-title>
 
-        <div class="border-t-2">
+        <div>
             <div class="flex flex-row justify-between w-full">
                 <!-- Left Scroll Button -->
                 <button id="scroll-left" class="z-10 bg-white/12 p-2 rounded-md shadow">
@@ -61,7 +61,7 @@
 
             <div id="scrollable-div" class=" bg-white/5 p-4 flex flex-row overflow-x-auto whitespace-nowrap h-auto space-x-7">
                 @foreach ($featured_blogs as $blog)
-                <x-blog.article :blog="$blog" />
+                <x-blog.article :item="$blog" />
                 @endforeach
 
                 @if($featured_blogs->count() == 0)
