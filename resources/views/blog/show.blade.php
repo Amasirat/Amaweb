@@ -2,7 +2,7 @@
     <div class="flex flex-col">
         <div class="mt-5">
             <div class="w-auto">
-                <img class="max-md:w-full w-10/12" src="{{ asset('storage/'.$blog->image) }}">
+                <img class="max-md:w-full w-10/12" src="{{ url($blog->image) }}">
             </div>
             <div class="mt-5 text-2xl font-bold ml-5">{{ $blog->title }}</div>
 

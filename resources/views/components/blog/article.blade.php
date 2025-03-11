@@ -3,7 +3,7 @@
 @php
 
     if(! is_null($blog->image))
-        $blogImage = asset('storage/'.$blog->image);
+        $blogImage = url($blog->image);
     else
         $blogImage = "https://placehold.co/500x400";
 

@@ -69,7 +69,7 @@ class BlogController extends Controller
             "title" => $attributes["title"],
             "body" => $attributes["body"],
             "user_id" => $user->id,
-            "image" => $imagePath
+            "image" => 'storage/'.$imagePath
         ]);
 
         SendBlogBulkUserMail::dispatch();
