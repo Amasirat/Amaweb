@@ -49,15 +49,18 @@ class UserController extends Controller
 
         if($user->profile_pic != null)
         {
-            if(file_exists(public_path().'/storage/'.$user->profile_pic))
-            {
-                unlink(public_path().'/storage/'.$user->profile_pic);
-            }
+            // if(file_exists(public_path().'/storage/'.$user->profile_pic))
+            // {
+            //     unlink($user->profile_pic);
+            // }
         }
 
-        $imagePath = $attributes["image"]->store('users');
+        $imagePath = 'users/'.$user->id.'/';
+        Storage::disk('public')->put($imagePath, $attributes["image"]);
 
-        User::where("id", $user->id)->update(array("profile_pic" => 'storage/'.$imagePath));
+        $imagePath .= $attributes["image"]->hashName();
+
+        User::where("id", $user->id)->update(["profile_pic" => 'storage/'.$imagePath]);
 
         return redirect("/panel");
     }

@@ -56,21 +56,23 @@ class BlogController extends Controller
             "body" => ["required"],
             "image" => [FileRule::types(['jpg', 'png', 'webp']), 'max:5120']
         ]);
-        // TODO: some images for some reason fail to upload. Get to the bottom of that
 
+        $blog = Blog::create([
+            "title" => $attributes["title"],
+            "body" => $attributes["body"],
+            "user_id" => $user->id,
+        ]);
+
+        // TODO: some images for some reason fail to upload. Get to the bottom of that
         if($request->image == null)
             $imagePath = null;
         else
         {
-            $imagePath = $attributes["image"]->store('blogs');
+            $imagePath = 'blogs/'.$blog->id.'/';
+            Storage::disk('public')->put($imagePath, $attributes["image"]);
+            $imagePath .= $attributes["image"]->hashName();
+            $blog->update(["image" => 'storage/'.$imagePath]);
         }
-
-        Blog::create([
-            "title" => $attributes["title"],
-            "body" => $attributes["body"],
-            "user_id" => $user->id,
-            "image" => 'storage/'.$imagePath
-        ]);
 
         SendBlogBulkUserMail::dispatch();
 

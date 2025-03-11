@@ -1,4 +1,4 @@
-@props(["label" => "", "title" => "$label", "type" => "text"])
+@props(["label" => "Input", "title" => $label, "type" => "text"])
 <div class="flex flex-col space-y-1">
     <label class="font-bold border-t-2 border-r-2 rounded-sm w-fit px-3" for="{{ $label }}">{{ ucfirst($title) }}</label>
     <input {{ $attributes->merge([
