@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Auth\Events\Registered;
@@ -56,7 +57,7 @@ class UserController extends Controller
 
         $imagePath = $attributes["image"]->store('users');
 
-        User::where("id", $user->id)->update(array("profile_pic" => $imagePath));
+        User::where("id", $user->id)->update(array("profile_pic" => 'storage/'.$imagePath));
 
         return redirect("/panel");
     }

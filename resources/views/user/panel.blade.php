@@ -5,7 +5,7 @@
             <div>
                 <img class="rounded-xl h-40 w-40" alt="profile_picture" src="{{
                 $user->profile_pic != null ?
-                    'storage/'.$user->profile_pic :
+                    url($user->profile_pic) :
                     Vite::asset('resources/images/placeholders/icons8-customer-50.png')
                 }}">
             </div>
