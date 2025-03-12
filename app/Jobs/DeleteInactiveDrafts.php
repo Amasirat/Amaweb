@@ -23,7 +23,7 @@ class DeleteInactiveDrafts implements ShouldQueue
      */
     public function handle(): void
     {
-        $inactive_drafts = Draft::where("active", false);
+        $inactive_drafts = Draft::where("active", false)->get();
 
         foreach($inactive_drafts as $draft)
         {
