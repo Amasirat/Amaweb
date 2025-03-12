@@ -128,7 +128,7 @@ Route::get('/panel/drafts/{draft}', [DraftController::class, 'edit'])
     ->middleware('auth')
     ->name('draft-view-edit');
 
-Route::patch('panel/drafts/{draft}', [DraftController::class, "update"])
+Route::post('panel/drafts/{draft}', [DraftController::class, "update"])
     ->middleware('auth')
     ->name("draft-edit");
 
@@ -139,3 +139,7 @@ Route::delete('/panel/drafts/{draft}', [DraftController::class, "destroy"])
 Route::post("/draft/create", [DraftController::class, "store"])
     ->middleware("auth")
     ->name("draft-create");
+
+Route::post('/panel/drafts/post-draft/{draft}', [DraftController::class, "turn_to_blog"])
+    ->middleware('auth')
+    ->name('post-draft');

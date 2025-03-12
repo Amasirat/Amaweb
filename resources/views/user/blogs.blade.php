@@ -6,7 +6,7 @@
                 <a href="/blogs/{{$blog->id}}" class="text-white">
                 <div class="p-5 bg-white/15 w-2/5 max-md:w-full hover:w-3/4 hover:bg-white/30 duration-300" >
 
-                    <x-blog.wide-article :blog="$blog" />
+                    <x-blog.wide-article :item="$blog" />
                 </div></a>
             </div>
             @endforeach

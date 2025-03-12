@@ -24,19 +24,23 @@
             </div>
         </div>
     <div class="m-15">
-        <x-form.form method="PATCH" id="form" action="/panel/drafts/{{$draft->id}}" :hasFile="true">
+        <x-form.form id="form" action="/panel/drafts/{{$draft->id}}" :hasFile="true">
             <div class="flex flex-row justify-between max-sm:flex-col max-sm:space-y-8">
-            <div class="flex flex-col">
-                <x-form.input-field class="h-14 w-96" name="title" label="title" value="{{ $draft->title }}" type="text"/>
-                <x-form.error field="title" />
-            </div>
+                <div class="flex flex-col">
+                    <x-form.input-field class="h-14 w-96" name="title" label="title" value="{{ $draft->title }}" type="text"/>
+                    <x-form.error field="title" />
+                </div>
+                <div class="flex flex-col">
+                    <x-form.input-field class="h-9 w-72 p-1" name="image" label="image" type="file" />
+                    <x-form.error field="image" />
+                </div>
             </div>
 
             <textarea name="body" class="whitespace-pre-wrap bg-white/35 rounded-lg min-h-96 p-5" placeholder="Write Here...">{{$draft->body}}</textarea>
             <x-form.error field="body" />
             <div class="flex flex-row space-x-4 ml-5">
                 <x-form.submit value="Save" form="form" />
-                <x-form.submit value="Post Blog" form="form" formaction="/blog/create" formmethod="POST" />
+                <x-form.submit value="Post Blog" form="form" formaction="/panel/drafts/post-draft/{{ $draft->id }}" />
             </div>
         </x-form.form>
     </div>

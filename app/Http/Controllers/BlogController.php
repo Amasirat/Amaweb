@@ -13,7 +13,9 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $blogs = Blog::latest()->orderByDesc("id")->paginate(10);
+        $blogs = Blog::latest()
+            ->orderByDesc("id")
+            ->paginate(10);
         return view("blog.index", [
             "blogs" => $blogs
         ]);
@@ -44,6 +46,7 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $user = Auth::user();
+        dd($request);
         // validate
         $attributes = $request->validate([
             "title" => ["required"],
@@ -58,9 +61,7 @@ class BlogController extends Controller
         ]);
 
         // TODO: some images for some reason fail to upload. Get to the bottom of that
-        if($request->image == null)
-            $imagePath = null;
-        else
+        if($request->image != null)
         {
             $imagePath = 'blogs/'.$blog->id.'/';
             Storage::disk('public')->put($imagePath, $attributes["image"]);
