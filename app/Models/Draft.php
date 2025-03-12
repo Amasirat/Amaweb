@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Providers\AppServiceProvider;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
@@ -19,49 +20,43 @@ class Draft extends Model
     }
 
     public function image() {
-        return $this->image != null ? url($this->image) :
+        return $this->image != null ? Storage::url($this->image) :
         (($this->id <= config("app.placeholder_limit")) ?
             'https://unsplash.it/1280/720?image='.$this->id :
             "https://placehold.co/1280x720");
     }
 
-    public static function upload_file_to_public(string $privateDirectory, string $publicDirectory)
+    public static function move_image_to_blog(string $draftDirectory, string $blogDirectory)
     {
-        $sourceDisk = Storage::disk('local');
-        $destinationDisk = Storage::disk('public');
-
-        if($sourceDisk->exists($privateDirectory))
+        $draftExplosion = explode("/", $draftDirectory);
+        $length = count($draftExplosion);
+        if($length <= 0)
         {
-            throw new \Exception("File not found in private storage");
+            throw new \Exception("draft->image had invalid directory");
         }
-
-        $explodedDirectory = explode("/", $privateDirectory);
-        // Get rid of base domain of the url
-        $privatePath = "";
-        for($i = 3; $i < count($explodedDirectory); $i++)
+        $filename = $draftExplosion[$length-1];
+        $stream = Storage::disk("public")->readStream($draftDirectory);
+        $blogImagePath = AppServiceProvider::join_path($blogDirectory, $filename);
+        if(! Storage::disk("public")->writeStream($blogImagePath, $stream))
         {
-            $privatePath .= $explodedDirectory[$i]."/";
+            throw new \Exception("Failed to upload blog image from draft");
         }
 
-        $filename = Str::uuid().'.'.pathinfo($privateDirectory)["extension"];
-        $length = strlen($publicDirectory);
-        // in the case when a '/' was not specified add it, otherwise just append filename
-        $publicPath = $publicDirectory.(($publicDirectory[$length-1] == "/") ? $filename : "/".$filename);
-
-        try {
-            $stream = $sourceDisk->readStream($privatePath);
-            $destinationDisk->writeStream($publicPath, $stream);
-
-            $sourceDisk->delete($privateDirectory);
-        }
-        catch(\Exception $e)
-        {
-            throw new \Exception("Could not move draft image to blog directory: ".$e->getMessage());
-        }
+        AppServiceProvider::delete_image_directory($draftDirectory);
 
         return [
-            "directory" => $publicDirectory,
+            "directory" => $blogDirectory,
             "filename" => $filename
         ];
+    }
+
+    public static function delete_draft(Draft $draft)
+    {
+        if($draft["image"] != null)
+        {
+            AppServiceProvider::delete_image_directory($draft->image);
+        }
+
+        $draft->delete();
     }
 }

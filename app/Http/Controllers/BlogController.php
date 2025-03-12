@@ -46,7 +46,6 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $user = Auth::user();
-        dd($request);
         // validate
         $attributes = $request->validate([
             "title" => ["required"],

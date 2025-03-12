@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Providers\AppServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\File as FileRule;
 use Illuminate\Support\Facades\Auth;
@@ -38,7 +39,7 @@ class DraftController extends Controller
         if($request["image"] != null)
         {
             $imagePath = 'drafts/'.$draft->id.'/';
-            Storage::disk('local')->put($imagePath, $attributes["image"]);
+            Storage::disk('public')->put($imagePath, $attributes["image"]);
             $imagePath .= $attributes["image"]->hashName();
             $draft->update(["image" => $imagePath]);
         }
@@ -58,8 +59,18 @@ class DraftController extends Controller
         $attributes = $request->validate([
             "title" => ["required"],
             "body" => ["required"],
+            "image" => [FileRule::types(['jpg', 'png', 'webp', 'svg']), 'max:5120']
         ]);
 
+        if($request["image"] != null)
+        {
+            if($draft->image != null)
+            {
+                AppServiceProvider::delete_image_directory($draft->image);
+            }
+            $dir = Storage::disk("public")->put("/drafts/".$draft->id, $attributes["image"]);
+            $attributes["image"] = $dir;
+        }
         $draft->update($attributes);
 
         return redirect()->back();
@@ -91,10 +102,17 @@ class DraftController extends Controller
                 "filename" => $attributes["image"]->hashname()];
 
             Storage::disk('public')->put($imagePath["directory"], $attributes["image"]);
+
+            // remove draft image from storage if it exists
+            if($draft->image != null)
+            {
+                AppServiceProvider::delete_image_directory($draft->image);
+            }
         }
         else if ($draft["image"] != null)
         {
-            $imagePath = Draft::upload_file_to_public($draft->image(), 'blogs/'.$blog->id.'/');
+            $imagePath = Draft::move_image_to_blog($draft->image, "/blogs/".$blog->id);
+            $draft->update(["image" => null]);
         }
         else
         {
@@ -103,9 +121,7 @@ class DraftController extends Controller
 
         if($imagePath != null)
         {
-
-            $imageDirectory = $imagePath["directory"].$imagePath["filename"];
-            dd($imageDirectory);
+            $imageDirectory = $imagePath["directory"]."/".$imagePath["filename"];
             $blog->update(["image" => 'storage/'.$imageDirectory]);
         }
 
@@ -116,11 +132,7 @@ class DraftController extends Controller
 
     public function destroy(Draft $draft)
     {
-        if($draft["image"] != null)
-            Storage::disk('local')->delete($draft["image"]);
-
-        $draft->delete();
-
+        Draft::delete_draft($draft);
         return redirect('/panel/drafts');
     }
 }
