@@ -7,10 +7,6 @@
     src: url('/resources/fonts/SoulDaisy.otf');
 }
 
-body {
-    font-family: 'soul-daisy' !important;
-}
-
 h1 {
     @apply font-bold text-9xl;
 }
