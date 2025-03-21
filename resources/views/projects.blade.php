@@ -70,14 +70,14 @@
                 </p>
             </x-project>
 
-            <x-project :image="Vite::asset('resources/images/projects/requiem of silence.jpg')" title="Requiem of Silence" href="">
+            <x-project :image="Vite::asset('resources/images/projects/requiem of silence.jpg')" title="Requiem of Silence" href="https://youtu.be/fDBM0k44yFA?si=tBfeiZART2CJZpz_">
                 My first ever completed transcribtion from ear. Requiem of Silence is a simple but yet devestatingly beautiful
                 piece of music. Because it was simple, I felt I could try my hand at transcribing the parts.
                 It was still incredibly difficult but it was yet another stepping stone for my improvement as a musician and composer.
                 It helps a lot that it became pretty popular! I wish my other more polished later works would get more love too...
             </x-project>
 
-            <x-project :image="Vite::asset('resources/images/projects/achildsDreamcover.png')" title="Inside my Dream" href="https://archiveofourown.org/works/59630983/chapters/152087257">
+            <x-project :image="Vite::asset('resources/images/projects/achildsDreamcover.png')" title="Inside my Dream" href="https://youtube.com/playlist?list=PLmBUjjdBhm5T7WYg2KNQkzmL21juvJuSw&si=OQt4cG0YRTFb31ST">
             <p>One summer week, I decided to participate in a composing gamejam thing.
                 The idea was that a theme was given, and based on that theme (either a word or an art piece)
                 you had to think up an imaginary game and compose its soundtrack. I decided to pick the art piece.
@@ -100,7 +100,7 @@
                 </p>
             </x-project>
 
-            <x-project :image="Vite::asset('resources/images/projects/original_pieces.png')" title="My Other Original Music" href="https://youtube.com/@amasirat?si=pI9tV6i1lDtryUsE">
+            <x-project :image="Vite::asset('resources/images/projects/original_pieces.png')" title="My Other Original Music" href="https://youtube.com/playlist?list=PLmBUjjdBhm5QjW8a1Bawz650oFZ4lznhA&si=RasDaReC_mJ0nivl">
             A playlist of original pieces of music, this list would be long if I had listed them all.
             </x-project>
 
@@ -108,7 +108,7 @@
 
         <x-title>Writing</x-title>
         <div class="flex flex-col space-y-10">
-            <x-project title="Second Awakening" href="https://archiveofourown.org/works/59630983/chapters/152087257">
+            <x-project :image="Vite::asset('resources/images/projects/Tensura.png')" title="Second Awakening" href="https://archiveofourown.org/works/59630983/chapters/152087257">
                 <p>
                     This story is what you would call fanfiction! It's a result of my over-ambitious mind
                     and a dream! It's incredibly slow to update

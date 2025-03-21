@@ -52,7 +52,7 @@
                 <a href="https://bsky.app/profile/amasirat.bsky.social"><img class="w-8 max-md:w-5" src="{{ Vite::asset('resources/images/icons/bluesky-icon.svg') }}" alt="bluesky"></a>
                 <a href="https://linkedin.com/in/amirhossein-basirat-355191287"><img class="w-8 max-md:w-5" src="{{ Vite::asset('resources/images/icons/linkedin-app-icon.svg') }}" alt="linkedin"></a>
                 <a href="https://youtube.com/@amasirat?si=pI9tV6i1lDtryUsE"><img class="w-8 max-md:w-5" src="{{ Vite::asset('resources/images/icons/youtube-color-icon.svg') }}" alt="youtube"></a>
-                <a href=""><img class="w-8 max-md:w-5" src="{{ Vite::asset('resources/images/icons/ig-instagram-icon.svg') }}" alt="instagram"></a>
+                <a href="https://www.instagram.com/amas1rat_?igsh=dWZ2YTZiNGJrazEx"><img class="w-8 max-md:w-5" src="{{ Vite::asset('resources/images/icons/ig-instagram-icon.svg') }}" alt="instagram"></a>
             </div>
         </div>
     </footer>
