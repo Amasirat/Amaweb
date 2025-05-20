@@ -57,7 +57,7 @@
 
         <x-title>Music</x-title>
         <div class="flex flex-col space-y-10">
-            <x-project :image="Vite::asset('resources/images/projects/your-love-is-a-drug.jpg')" title="Your Love is a Drug Cover" href="">
+            <x-project :image="Vite::asset('resources/images/projects/your-love-is-a-drug.jpg')" title="Your Love is a Drug Cover" href="https://soundcloud.com/amasirat/your-love-is-a-drug-cover?si=e57bfd4ce4464249a91b6ea50659566b">
                <p>
                 My first ever cover made in Reaper using synths. Music production is a whole another world of music than doing
                 music with notation softwares. For my first attempt, I believe it went as well as it could.
